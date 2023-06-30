@@ -7,17 +7,36 @@
 		<link rel="stylesheet" href="./css/style.css" />
 		<title>Segam Mobile Service</title>
 	</head>
-	<body>
+	<body class="relative">
 		<nav
-			class="flex justify-between items-center mt-20 border bg-amber-900 py-5 px-10">
-			<img src="/assets/SMS LOGO 1.png" alt="logo" />
-			<img class="sm:hidden" src="./assets/ham.svg" alt="hamburger" />
-			<ul class="absolute top-0 right-0 bg-white border">
+			class="flex absolute w-full justify-between items-center mt-10 py-5 px-10">
+			<img src="/assets/SMS LOGO 1.png" class="w-18" alt="logo" />
+			<img
+				class="ham sm:hidden w-8 h-8"
+				src="./assets/ham.svg"
+				alt="hamburger" />
+			<ul
+				class="toggle absolute hidden flex-col gap-5 top-0 right-0 bg-white border p-20 rounded-3xl sm:flex z-20 after:absolute after:z-10 after:top-0 after:left-0 after:w-screen after:h-screen after:bg-black after:backdrop-blur-sm after:opacity-10">
 				<li>Home</li>
-				<li>Home</li>
-				<li>Home</li>
+				<li>Edu</li>
+				<li>About</li>
 			</ul>
 		</nav>
-		<section class="bg-[url('./assets/Default.png')] bg-cover"></section>
+		<section class="h-screen text-center text-xl">
+			<div
+				class="bg-[url('/assets/Default.png')] bg-cover w-screen h-[80vh] flex flex-col justify-center items-center p-10">
+				<h1 class="text-4xl font-bold text-[#EEE159]">
+					Bringing Financial Convenience to YOU!
+				</h1>
+				<p class="text-white">
+					Say goodbye to long queues and Hello to on-demand cash transactions.
+				</p>
+			</div>
+			<div class="p-8">
+				SMS have successfully servced over 600+ customers within the Campus and
+				still counting..........
+			</div>
+		</section>
+		<script src="./index.js"></script>
 	</body>
 </html>
