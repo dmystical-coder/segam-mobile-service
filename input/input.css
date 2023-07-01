@@ -2,5 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* npx tailwind -i ./input/input.css -o ./css.style.css --watch */
 @layer base {
+  .card {
+    @apply flex items-center justify-center p-10;
+  }
 }

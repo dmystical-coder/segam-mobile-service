@@ -422,6 +422,13 @@ video {
   display: none;
 }
 
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -623,6 +630,10 @@ video {
   inset: -0.25rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .end-1 {
   inset-inline-end: 0.25rem;
 }
@@ -814,6 +825,10 @@ video {
   height: 2rem;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
 .h-\[80vh\] {
   height: 80vh;
 }
@@ -826,16 +841,24 @@ video {
   width: 0.25rem;
 }
 
-.w-1\/2 {
-  width: 50%;
+.w-4\/5 {
+  width: 80%;
 }
 
 .w-8 {
   width: 2rem;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
 .w-screen {
   width: 100vw;
+}
+
+.max-w-\[60\%\] {
+  max-width: 60%;
 }
 
 .flex-shrink {
@@ -1666,6 +1689,14 @@ video {
   border-radius: 0.5rem;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -1730,6 +1761,10 @@ video {
 
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-x {
@@ -1800,8 +1835,35 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#eee159\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 225 89 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\/assets\/Default\.png\'\)\] {
   background-image: url('/assets/Default.png');
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-black {
+  --tw-gradient-from: #000 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-50\% {
+  --tw-gradient-from-position: 50%;
+}
+
+.to-\[\#EEE159\] {
+  --tw-gradient-to: #EEE159 var(--tw-gradient-to-position);
+}
+
+.to-50\% {
+  --tw-gradient-to-position: 50%;
 }
 
 .decoration-slice {
@@ -1943,6 +2005,11 @@ video {
   padding-right: 2.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -2009,9 +2076,19 @@ video {
   vertical-align: super;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-xl {
@@ -2100,6 +2177,11 @@ video {
 }
 
 .text-\[\#EEE159\] {
+  --tw-text-opacity: 1;
+  color: rgb(238 225 89 / var(--tw-text-opacity));
+}
+
+.text-\[\#eee159\] {
   --tw-text-opacity: 1;
   color: rgb(238 225 89 / var(--tw-text-opacity));
 }
@@ -2507,9 +2589,9 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.after\:opacity-20::after {
+.after\:opacity-30::after {
   content: var(--tw-content);
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .hover\:font-bold:hover {
@@ -2535,10 +2617,6 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:block {
-    display: block;
-  }
-
   .sm\:flex {
     display: flex;
   }
@@ -2547,12 +2625,12 @@ video {
     display: none;
   }
 
-  .sm\:h-screen {
-    height: 100vh;
+  .sm\:h-full {
+    height: 100%;
   }
 
-  .sm\:w-2\/3 {
-    width: 66.666667%;
+  .sm\:h-screen {
+    height: 100vh;
   }
 
   .sm\:flex-row {
@@ -2567,21 +2645,22 @@ video {
     background-color: transparent;
   }
 
-  .sm\:bg-\[url\(\'\/assets\/sm-Default\.png\'\)\] {
-    background-image: url('/assets/sm-Default.png');
+  .sm\:p-20 {
+    padding: 5rem;
   }
 
   .sm\:p-5 {
     padding: 1.25rem;
   }
 
-  .sm\:text-left {
-    text-align: left;
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
-  .sm\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
+  .sm\:text-black {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
   }
 
   .sm\:text-white {
@@ -2600,12 +2679,41 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mt-40 {
+    margin-top: 10rem;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
   }
 
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:max-w-3xl {
+    max-width: 48rem;
+  }
+
   .md\:items-start {
     align-items: flex-start;
+  }
+
+  .md\:bg-\[url\(\'\/assets\/sm-Default\.png\'\)\] {
+    background-image: url('/assets/sm-Default.png');
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
 

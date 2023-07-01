@@ -1,60 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/style.css" />
-		<title>Segam Mobile Service</title>
-	</head>
-	<body class="relative overflow-x-hidden">
-		<nav
-			class="flex absolute w-screen justify-between items-center mt-10 py-5 px-10">
-			<img src="/assets/SMS LOGO 1.png" class="w-18" alt="logo" />
-			<img
-				class="ham sm:hidden w-8 h-8"
-				src="./assets/ham.svg"
-				alt="hamburger" />
-			<ul
-				class="toggle absolute hidden flex-col gap-5 top-0 right-0 bg-white border p-20 rounded-3xl sm:flex sm:flex-row sm:p-5 sm:border-0 sm:text-white sm:after:hidden sm:bg-transparent z-20 after:absolute after:-z-[1] after:-top-10 after:right-0 after:w-screen after:h-screen after:bg-black after:backdrop-blur-4xl after:opacity-20">
-				<li>Home</li>
-				<li>SMS Edu</li>
-				<li>About</li>
-			</ul>
-		</nav>
-		<section class="h-screen sm:text-left text-center text-xl">
-			<div
-				class="sm:bg-[url('/assets/sm-Default.png')] sm:h-screen md:items-start bg-[url('/assets/Default.png')] bg-cover w-screen h-[80vh] flex flex-col justify-center items-center p-10">
-				<h1 class="text-4xl font-bold text-[#EEE159] sm:text-6xl sm:w-2/3">
-					Bringing Financial Convenience to YOU!
-				</h1>
-				<p class="hidden sm:block text-white w-1/2">
-					Experience the ease of cash transactions and POS services brought
-					right to your doorstep with SMS. Say goodbye to long queues and hello
-					to hassle-free financial convenience.
-				</p>
-				<p class="text-white sm:hidden">
-					Say goodbye to long queues and Hello to on-demand cash transactions.
-				</p>
-				<div
-					class="hidden md:flex justify-center items-center w-1/2 rounded-lg bg-white mt-10 p-5 gap-3">
-					<img src="./assets/Ellipse 10.png" alt="Ellipse" />
-					<div>
-						<p>
-							Ever since I have learnt about SMS, my money related transactions
-							has always been with them.
-						</p>
-						<p class="font-semibold mt-3">Tunde Samuel</p>
-					</div>
-				</div>
-			</div>
-			<div class="p-5 text">
-				SMS have successfully servced over
-				<span class="font-semibold"> 600+ customers</span> within the Campus and
-				still counting..........
-			</div>
-		</section>
-		<section></section>
-		<script src="./index.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Segam Mobile Service</title>
+  </head>
+  <body class="relative overflow-x-hidden">
+    <nav
+      class="absolute mt-10 flex w-screen items-center justify-between px-10 py-5"
+    >
+      <img src="/assets/SMS LOGO 1.png" class="w-18" alt="logo" />
+      <img
+        class="ham h-8 w-8 sm:hidden"
+        src="./assets/ham.svg"
+        alt="hamburger"
+      />
+      <ul
+        class="toggle after:bg-blur-3xl absolute right-0 top-0 z-20 hidden flex-col gap-5 rounded-3xl border bg-white p-20 after:absolute after:-top-10 after:right-0 after:-z-[1] after:h-screen after:w-screen after:bg-black after:opacity-30 sm:flex sm:flex-row sm:border-0 sm:bg-transparent sm:p-5 sm:text-white sm:after:hidden"
+      >
+        <li>Home</li>
+        <li>SMS Edu</li>
+        <li>About</li>
+      </ul>
+    </nav>
+    <section class="h-screen text-center text-xl sm:h-full md:text-left">
+      <div
+        class="flex h-[80vh] w-screen flex-col items-center justify-center bg-[url('/assets/Default.png')] bg-cover p-10 sm:h-screen md:items-start md:bg-[url('/assets/sm-Default.png')]"
+      >
+        <h1
+          class="text-4xl font-bold text-[#EEE159] md:mt-40 md:max-w-3xl md:text-6xl"
+        >
+          Bringing Financial Convenience to YOU!
+        </h1>
+        <p class="hidden w-4/5 text-white md:block">
+          Experience the ease of cash transactions and POS services brought
+          right to your doorstep with SMS. Say goodbye to long queues and hello
+          to hassle-free financial convenience.
+        </p>
+        <p class="text-white md:hidden">
+          Say goodbye to long queues and Hello to on-demand cash transactions.
+        </p>
+        <div
+          class="mt-10 hidden max-w-[60%] items-center justify-center gap-3 rounded-lg bg-white p-5 md:flex"
+        >
+          <img src="./assets/Ellipse 10.png" alt="Ellipse" />
+          <div>
+            <p>
+              Ever since I have learnt about SMS, my money related transactions
+              has always been with them.
+            </p>
+            <p class="mt-3 font-semibold">Tunde Samuel</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center justify-center p-10 text-2xl sm:p-20 sm:text-3xl"
+      >
+        <p class="text-center">
+          SMS have successfully servced over
+          <span class="font-semibold"> 600+ customers</span> within the Campus
+          and still counting..........
+        </p>
+      </div>
+    </section>
+    <section class="flex items-center justify-center gap-5">
+      <div class="hidden md:block">
+        <div
+          class="h-80 w-80 rounded-xl bg-gradient-to-r from-black from-50% to-[#EEE159] to-50%"
+        >
+          <img
+            src="./assets/removed 1 1.png"
+            class="with relative bottom-0"
+            alt="girl"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h1 class="px-10 py-10 text-5xl font-bold">
+          Do YOU need an instant
+          <span class="text-[#eee159] sm:text-black"> CASH?</span>
+        </h1>
+        <p class="px-10 text-2xl">
+          Connect with our fast and reliable agents to get it sorted in less
+          time.
+        </p>
+        <div class="flex">
+          <div class="card">
+            <div class="relative rounded-full border-2 bg-[#eee159]">
+              <div class="absolute border-b"></div>
+              <img src="./assets/agent1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
 </html>
