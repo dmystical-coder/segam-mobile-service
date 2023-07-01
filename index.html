@@ -6,6 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Segam Mobile Service</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .carousel {
+        width: 100vw;
+        height: 90vh;
+        position: relative;
+      }
+
+      .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: 500ms opacity ease-in-out;
+        transition-delay: 200ms;
+      }
+
+      .slide > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .slide[data-active] {
+        opacity: 1;
+        transition-delay: 0ms;
+        z-index: 1;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        border: none;
+        background: none;
+        font-size: 4rem;
+        z-index: 10;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.7);
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+      .carousel-btn:hover,
+      .carousel-btn:focus {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .carousel-btn:focus {
+        outline: 1px solid black;
+      }
+
+      .prev {
+        left: 1rem;
+      }
+      .next {
+        right: 1rem;
+      }
+
+      @media screen and (min-width: 60rem) {
+        .carousel-btn {
+          display: block;
+        }
+      }
+    </style>
   </head>
   <body class="relative overflow-x-hidden">
     <nav
@@ -86,16 +160,55 @@
           Connect with our fast and reliable agents to get it sorted in less
           time.
         </p>
-        <div class="flex">
+        <div class="flex items-center justify-center">
+          <!-- CARD 1 -->
           <div class="card">
-            <div class="relative rounded-full border-2 bg-[#eee159]">
-              <div class="absolute border-b"></div>
-              <img src="./assets/agent1.png" alt="" />
+            <div class="relative rounded-full border-2">
+              <div class="h-[80px] w-[96px] border-b-4 bg-[#eee159]"></div>
+              <img src="./assets/agent1.png" class="" alt="" />
+            </div>
+          </div>
+          <!-- CARD 2 -->
+          <div class="card">
+            <div class="relative rounded-full border-2">
+              <div class="h-[80px] w-[96px] border-b-4 bg-[#eee159]"></div>
+              <img src="./assets/agent2.png" class="" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section aria-label="Newest-Photos">
+      <div class="carousel" data-carousel>
+        <button
+          class="carousel-btn prev"
+          data-carousel-btn
+          data-carousel-button="prev"
+        >
+          &lArr;
+        </button>
+        <button
+          class="carousel-btn next"
+          data-carousel-btn
+          data-carousel-button="next"
+        >
+          &rArr;
+        </button>
+        <ul data-slides>
+          <li class="slide" data-active>
+            <img src="./assets/Default.png" alt="" />
+          </li>
+          <li class="slide">
+            <img src="./assets/Default.png" alt="" />
+          </li>
+          <li class="slide">
+            <img src="./assets/Default.png" alt="" />
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <script src="./index.js"></script>
   </body>
 </html>
