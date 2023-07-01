@@ -7,9 +7,9 @@
 		<link rel="stylesheet" href="./css/style.css" />
 		<title>Segam Mobile Service</title>
 	</head>
-	<body class="relative overflow-hidden">
+	<body class="relative overflow-x-hidden">
 		<nav
-			class="flex absolute w-full justify-between items-center mt-10 py-5 px-10">
+			class="flex absolute w-screen justify-between items-center mt-10 py-5 px-10">
 			<img src="/assets/SMS LOGO 1.png" class="w-18" alt="logo" />
 			<img
 				class="ham sm:hidden w-8 h-8"
@@ -18,13 +18,13 @@
 			<ul
 				class="toggle absolute hidden flex-col gap-5 top-0 right-0 bg-white border p-20 rounded-3xl sm:flex sm:flex-row sm:p-5 sm:border-0 sm:text-white sm:after:hidden sm:bg-transparent z-20 after:absolute after:-z-[1] after:-top-10 after:right-0 after:w-screen after:h-screen after:bg-black after:backdrop-blur-4xl after:opacity-20">
 				<li>Home</li>
-				<li>Edu</li>
+				<li>SMS Edu</li>
 				<li>About</li>
 			</ul>
 		</nav>
 		<section class="h-screen sm:text-left text-center text-xl">
 			<div
-				class="sm:bg-[url('/assets/sm-Default.png')] sm:h-screen sm:items-start bg-[url('/assets/Default.png')] bg-cover w-screen h-[80vh] flex flex-col justify-center items-center p-10">
+				class="sm:bg-[url('/assets/sm-Default.png')] sm:h-screen md:items-start bg-[url('/assets/Default.png')] bg-cover w-screen h-[80vh] flex flex-col justify-center items-center p-10">
 				<h1 class="text-4xl font-bold text-[#EEE159] sm:text-6xl sm:w-2/3">
 					Bringing Financial Convenience to YOU!
 				</h1>
@@ -37,7 +37,7 @@
 					Say goodbye to long queues and Hello to on-demand cash transactions.
 				</p>
 				<div
-					class="flex justify-center items-center w-1/2 rounded-lg bg-white mt-10 p-5 gap-3">
+					class="hidden md:flex justify-center items-center w-1/2 rounded-lg bg-white mt-10 p-5 gap-3">
 					<img src="./assets/Ellipse 10.png" alt="Ellipse" />
 					<div>
 						<p>
@@ -49,10 +49,12 @@
 				</div>
 			</div>
 			<div class="p-5 text">
-				SMS have successfully servced over 600+ customers within the Campus and
+				SMS have successfully servced over
+				<span class="font-semibold"> 600+ customers</span> within the Campus and
 				still counting..........
 			</div>
 		</section>
+		<section></section>
 		<script src="./index.js"></script>
 	</body>
 </html>
