@@ -9,6 +9,7 @@ const handleToggler = () => {
 ham.addEventListener("click", handleToggler);
 mobileNav.addEventListener("click", handleToggler);
 
+// hero carousel
 const buttons = document.querySelectorAll("[data-carousel-btn]");
 const nextBtn = document.querySelector('[data-carousel-button="next"]');
 const slideContainer = document.querySelector("[data-carousel] [data-slides]");
@@ -48,10 +49,30 @@ slideContainer.addEventListener("touchend", (e) => {
   nextBtn = document.querySelector('[data-carousel-button="next"]');
 
   if (deltaX > 0) {
-    // console.log(prevBtn.click());
     prevBtn.click();
   } else if (deltaX < 0) {
-    // console.log(nextBtn.click);
     nextBtn.click();
   }
 });
+
+// product carousel
+const images = document.getElementsByClassName("productItem");
+let imageIndex = 0;
+const numberOfImages = images.length;
+
+showImages();
+
+function showImages() {
+  let i;
+  for (i = 0; i < numberOfImages; i++) {
+    images[i].style.display = "none";
+  }
+  imageIndex++;
+  if (imageIndex > numberOfImages) {
+    imageIndex = 1;
+  }
+
+  images[imageIndex - 1].style.display = "block";
+
+  setTimeout(showImages, 2000); // Change image every 2 seconds
+}

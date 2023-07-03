@@ -2,9 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* npx tailwind -i ./input/input.css -o ./css.style.css --watch */
+/* npx tailwind -i ./input/input.css -o ./css/style.css --watch */
 @layer base {
+  .carousel {
+    @apply relative h-full w-screen;
+  }
+
+  .slide {
+    @apply absolute inset-[0] h-[70vh] text-center text-xl opacity-0 transition-opacity delay-200 duration-500 ease-in-out sm:h-full md:text-left;
+  }
+
+  .slide > img {
+    @apply block h-full w-full object-cover object-center;
+  }
+  .slide > div {
+    @apply block h-full w-full;
+  }
+
+  .slide[data-active] {
+    @apply z-[1] opacity-100 delay-0;
+  }
+
+  .carousel-btn {
+    @apply absolute top-1/2 z-10 hidden -translate-y-1/2 rounded border-none bg-[#0000001a] bg-none p-2 text-7xl text-[#ffffffb3] sm:block;
+  }
+
+  .carousel-btn:hover,
+  .carousel-btn:focus {
+    @apply bg-[#00000033] text-white;
+  }
+
+  .carousel-btn {
+    @apply focus:outline-black;
+  }
+
+  .prev {
+    @apply left-4;
+  }
+
+  .next {
+    @apply right-4;
+  }
+
   .card {
     @apply flex items-center justify-center p-10;
+  }
+
+  .features {
+    @apply m-12 flex w-[90%] flex-col items-center justify-center gap-2 rounded-3xl bg-white p-2 shadow-lg;
   }
 }

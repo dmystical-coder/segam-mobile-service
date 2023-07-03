@@ -7,77 +7,151 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Segam Mobile Service</title>
     <style>
-      *,
-      *::after,
-      *::before {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      .carousel {
-        width: 100vw;
-        height: 90vh;
-        position: relative;
-      }
-
-      .slide {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        transition: 500ms opacity ease-in-out;
-        transition-delay: 200ms;
-      }
-
-      .slide > img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-
-      .slide[data-active] {
-        opacity: 1;
-        transition-delay: 0ms;
-        z-index: 1;
-      }
-
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        border: none;
-        background: none;
-        font-size: 4rem;
-        z-index: 10;
-        transform: translateY(-50%);
-        color: rgba(255, 255, 255, 0.7);
-        border-radius: 0.25rem;
+      /* .features {
+        margin: 3rem 2rem 0;
+        display: flex;
         padding: 0.5rem;
-        background-color: rgba(0, 0, 0, 0.1);
-        display: none;
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 1.875rem;
+        background: #fff;
+        box-shadow: 0px 9px 50px -19px rgba(0, 0, 0, 0.25);
+      } */
+
+      .features > h2 {
+        color: #1e1e1e;
+        font-size: 2rem;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
       }
-      .carousel-btn:hover,
-      .carousel-btn:focus {
-        color: white;
-        background-color: rgba(0, 0, 0, 0.2);
+      .features > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
-      .carousel-btn:focus {
-        outline: 1px solid black;
+      .features div > p {
+        color: #1e1e1e;
+        font-size: 1.2rem;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 600;
       }
 
-      .prev {
-        left: 1rem;
-      }
-      .next {
-        right: 1rem;
+      .testimonials {
+        margin-top: 4rem;
+        background-color: #eee159;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
-      @media screen and (min-width: 60rem) {
-        .carousel-btn {
-          display: block;
-        }
+      .testimonial-section-title {
+        font-size: 1.25rem;
+        margin-top: -1.2rem;
+        display: inline-flex;
+        padding: 0.5rem;
+        border-radius: 0.625rem;
+        background: #fff;
+        box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.25);
+
+        color: #1e1e1e;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      .testimonials-card {
+        margin: 2rem 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        border-radius: 1.25rem;
+        background: #fff;
+      }
+
+      .content p {
+        text-align: left;
+      }
+
+      .content span {
+        margin: 0.7rem;
+        display: block;
+      }
+
+      .product-pack {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .product-pack p {
+        color: #1e1e1e;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .product-pack a {
+        color: #fff;
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        background: #1e1e1e;
+        box-shadow: 0px 9px 50px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      footer {
+        margin-top: 1rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        background-color: #1e1e1e;
+      }
+
+      footer > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      footer h3 {
+        color: #eee159;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
       }
     </style>
   </head>
@@ -85,7 +159,7 @@
     <nav
       class="absolute mt-10 flex w-screen items-center justify-between px-10 py-5"
     >
-      <img src="/assets/SMS LOGO 1.png" class="w-18" alt="logo" />
+      <img src="/assets/icons/SMS LOGO 1.png" class="w-18" alt="logo" />
       <img
         class="ham h-8 w-8 sm:hidden"
         src="./assets/ham.svg"
@@ -99,9 +173,76 @@
         <li>About</li>
       </ul>
     </nav>
+
     <section class="h-screen text-center text-xl sm:h-full md:text-left">
-      <div
-        class="flex h-[80vh] w-screen flex-col items-center justify-center bg-[url('/assets/Default.png')] bg-cover p-10 sm:h-screen md:items-start md:bg-[url('/assets/sm-Default.png')]"
+      <ul class="carousel" data-slides>
+        <button
+          class="carousel-btn prev"
+          data-carousel-btn
+          data-carousel-button="prev"
+        >
+          &lArr;
+        </button>
+        <button
+          class="carousel-btn next"
+          data-carousel-btn
+          data-carousel-button="next"
+        >
+          &rArr;
+        </button>
+
+        <li class="slide" data-active>
+          <img src="./assets/mobile-bg-1.png" alt="" />
+        </li>
+
+        <li class="slide">
+          <div
+            class="flex h-[80vh] w-screen flex-col items-center justify-center bg-[url('/assets/mobile-bg-1.png')] bg-cover p-10 sm:h-screen md:items-start md:bg-[url('/assets/sm-Default.png')]"
+          >
+            <h1
+              class="text-4xl font-bold text-[#EEE159] md:mt-40 md:max-w-3xl md:text-6xl"
+            >
+              Bringing Financial Convenience to YOU!
+            </h1>
+            <p class="hidden w-4/5 text-white md:block">
+              Experience the ease of cash transactions and POS services brought
+              right to your doorstep with SMS. Say goodbye to long queues and
+              hello to hassle-free financial convenience.
+            </p>
+            <p class="text-white md:hidden">
+              Say goodbye to long queues and Hello to on-demand cash
+              transactions.
+            </p>
+            <div
+              class="mt-10 hidden max-w-[60%] items-center justify-center gap-3 rounded-lg bg-white p-5 md:flex"
+            >
+              <img src="./assets/Ellipse 10.png" alt="Ellipse" />
+              <div>
+                <p>
+                  Ever since I have learnt about SMS, my money related
+                  transactions has always been with them.
+                </p>
+                <p class="mt-3 font-semibold">Tunde Samuel</p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="slide">
+          <img src="./assets/mobile-bg-3.png" alt="" />
+        </li>
+
+        <li class="slide">
+          <img src="./assets/mobile-bg-4.png" alt="" />
+        </li>
+
+        <li class="slide">
+          <img src="./assets/mobile-bg-5.png" alt="" />
+        </li>
+      </ul>
+
+      <!-- <div
+        class="flex h-[80vh] w-screen flex-col items-center justify-center bg-[url('/assets/mobile-bg-1.png')] bg-cover p-10 sm:h-screen md:items-start md:bg-[url('/assets/sm-Default.png')]"
       >
         <h1
           class="text-4xl font-bold text-[#EEE159] md:mt-40 md:max-w-3xl md:text-6xl"
@@ -128,7 +269,8 @@
             <p class="mt-3 font-semibold">Tunde Samuel</p>
           </div>
         </div>
-      </div>
+      </div> -->
+
       <div
         class="flex items-center justify-center p-10 text-2xl sm:p-20 sm:text-3xl"
       >
@@ -141,15 +283,11 @@
     </section>
     <section class="flex items-center justify-center gap-5">
       <div class="hidden md:block">
-        <div
-          class="h-80 w-80 rounded-xl bg-gradient-to-r from-black from-50% to-[#EEE159] to-50%"
-        >
-          <img
-            src="./assets/removed 1 1.png"
-            class="with relative bottom-0"
-            alt="girl"
-          />
-        </div>
+        <img
+          src="./assets/images/ambassador.png"
+          class="with relative bottom-0"
+          alt="girl"
+        />
       </div>
       <div class="text-center">
         <h1 class="px-10 py-10 text-5xl font-bold">
@@ -163,51 +301,153 @@
         <div class="flex items-center justify-center">
           <!-- CARD 1 -->
           <div class="card">
-            <div class="relative rounded-full border-2">
-              <div class="h-[80px] w-[96px] border-b-4 bg-[#eee159]"></div>
-              <img src="./assets/agent1.png" class="" alt="" />
+            <div class="relative">
+              <img src="./assets/images/pos-agent-i.png" class="" alt="" />
             </div>
           </div>
+
           <!-- CARD 2 -->
           <div class="card">
-            <div class="relative rounded-full border-2">
-              <div class="h-[80px] w-[96px] border-b-4 bg-[#eee159]"></div>
-              <img src="./assets/agent2.png" class="" alt="" />
+            <div class="relative">
+              <img src="./assets/images/pos-agent-ii.png" class="" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section aria-label="Newest-Photos">
-      <div class="carousel" data-carousel>
-        <button
-          class="carousel-btn prev"
-          data-carousel-btn
-          data-carousel-button="prev"
-        >
-          &lArr;
-        </button>
-        <button
-          class="carousel-btn next"
-          data-carousel-btn
-          data-carousel-button="next"
-        >
-          &rArr;
-        </button>
-        <ul data-slides>
-          <li class="slide" data-active>
-            <img src="./assets/Default.png" alt="" />
-          </li>
-          <li class="slide">
-            <img src="./assets/Default.png" alt="" />
-          </li>
-          <li class="slide">
-            <img src="./assets/Default.png" alt="" />
-          </li>
-        </ul>
+    <section aria-label="Newest-Photos"></section>
+
+    <!-- COPIED -->
+    <div class="features">
+      <h2>Our Services</h2>
+      <div>
+        <img src="./assets/icons/pos-icon.png" alt="" />
+        <p>Mobile POS Service</p>
+      </div>
+      <div>
+        <img src="./assets/icons/box-open 1.png" alt="" />
+        <p>SMS Product Pack</p>
+      </div>
+      <div>
+        <img src="./assets/icons/books 1.png" alt="" />
+        <p>SMS Educational Services</p>
+      </div>
+    </div>
+    <section class="testimonials">
+      <h3 class="testimonial-section-title">Why you should Trust SMS</h3>
+
+      <div class="carousel-container">
+        <div class="testimonials-card">
+          <img src="./assets/img/person-1.svg" alt="" />
+          <div class="content">
+            <p>
+              Ever since I have learnt about SMS, my money related transactions
+              has always been with them.
+              <span>- Tunde Samuel</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonials-card" style="background-color: #1e1e1e">
+          <img src="./assets/img/person-2.svg" alt="" />
+          <div class="content">
+            <p style="color: #ffffff">
+              I do wish SMS can operate outside the campus premises cos omooo!
+
+              <span>- James Mauton</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonials-card" style="background-color: #1e1e1e">
+          <img src="./assets/img/person-3.svg" alt="" />
+          <div class="content">
+            <p style="color: #eee159">
+              If you haven't used SMS service, what will I tell you other than,
+              “Dey play!”
+              <span>- Rebecca</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonials-card">
+          <img src="./assets/img/person-1.svg" alt="" />
+          <div class="content">
+            <p>
+              I thought I was going to trek home today until a friend told me
+              about SMS, it all happened like flash!
+
+              <span>- Lekan</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonials-card" style="background-color: #1e1e1e">
+          <img src="./assets/img/person-2.svg" alt="" />
+          <div class="content">
+            <p style="color: #ffffff">
+              Na person wey never sabi dey queue for ATM, with very little
+              charges, SMS don sort me!
+
+              <span>- John</span>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
+
+    <section class="product-pack">
+      <div class="product-img-container">
+        <img class="productItem" src="./assets/img/product-pack-i.png" alt="" />
+        <img
+          class="productItem"
+          src="./assets/img/product-pack-ii.png"
+          alt=""
+        />
+      </div>
+      <h2>SMS Product Pack</h2>
+
+      <p>
+        SMS Products are packaged food items that are made available to students
+        at an affordable cost. Three different food items are made available in
+        an SMS Product package. One of the food items provides you with up to
+        four varieties of food for consumption, while the remaining two give you
+        other tasty food options. Each SMS Product package can sustain a student
+        throughout a week.
+      </p>
+
+      <a href="#">Join the product discussion</a>
+    </section>
+
+    <footer>
+      <div>
+        <h3>Company</h3>
+        <a href="#">About Us</a>
+        <a href="#">Our Services</a>
+      </div>
+      <div>
+        <h3>Socials</h3>
+        <a href="https://www.facebook.com/profile.php?id=100086619889189"
+          >Facebook</a
+        >
+        <a href="https://twitter.com/SegamMobileServ">Twitter</a>
+        <a
+          href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ=="
+          >Instagram</a
+        >
+        <a href="https://tiktok.com/@segammobileserv">Tiktok</a>
+        <a
+          href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US"
+          >Snapchat</a
+        >
+        <a href="https://youtube.com/@SegamMobileServices">YouTube</a>
+      </div>
+      <div>
+        <h3>Help</h3>
+        <a href="#">Contact Us</a>
+      </div>
+    </footer>
 
     <script src="./index.js"></script>
   </body>
