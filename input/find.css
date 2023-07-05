@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* npx tailwind -i ./input/find.css -o ./css/find.css --watch  */
+
+@layer base {
+  * {
+    @apply font-poppins;
+  }
+
+  body {
+    @apply relative overflow-x-hidden;
+  }
+
+  header {
+    @apply mx-auto flex max-w-5xl flex-col items-center justify-center gap-3 rounded-b-3xl bg-[#1e1e1e] pt-4 text-center text-[#eee159];
+  }
+  header .header-text-wrap {
+    @apply w-80 md:w-full;
+  }
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  header h1 span {
+    @apply text-4xl;
+  }
+  header p {
+    @apply text-2xl;
+  }
+  label {
+    @apply hidden;
+  }
+}
+
+.search-wrap {
+  @apply mb-10 flex rounded-3xl border border-gray-400 px-5 py-2;
+}
+.search-wrap input {
+  @apply border-none bg-transparent text-2xl text-gray-400 outline-0;
+}
+
+.select-wrap {
+  @apply mx-auto flex w-[80vw] max-w-3xl flex-col gap-8 py-10;
+}
+
+.select-wrap div {
+  @apply w-full;
+}
+
+select,
+button {
+  @apply h-24 w-full rounded-3xl p-5 text-justify text-2xl drop-shadow focus:outline-0;
+}
+
+button {
+  @apply bg-[#eee159] text-center;
+}
+
+select option[value="xxxx"] {
+  @apply text-gray-400;
+}
+
+footer {
+  @apply mt-4 flex justify-center gap-12 bg-[#1e1e1e] p-4 md:mt-0 md:justify-around;
+}
+
+footer > div {
+  @apply flex flex-col gap-2;
+}
+
+footer h3 {
+  @apply text-base text-[#eee159] md:text-3xl;
+}
+
+footer a {
+  @apply text-xs font-normal text-white md:text-xl;
+}
+
+.err-msg {
+  @apply fixed left-0 top-0 z-10 h-full w-screen flex-col items-center justify-center bg-black/30 backdrop-blur-sm;
+}
+
+.err-card {
+  @apply flex w-80 flex-col items-center justify-center gap-3 rounded-3xl bg-white p-8 text-center;
+}
+
+.err-card > img {
+  @apply relative left-28;
+}
+
+.err-img-wrap {
+  @apply flex h-20 w-20 items-center justify-center rounded-full border-8 border-red-300 bg-red-600;
+}
+
+.err-card h3,
+.err-card p {
+  @apply text-red-600;
+}
+
+.err-card h3 {
+  @apply px-4 text-3xl;
+}
+.err-card button {
+  @apply bg-green-600 p-3 text-base text-white;
+}

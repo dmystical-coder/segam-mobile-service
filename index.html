@@ -7,152 +7,53 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Segam Mobile Service</title>
     <style>
-      /* .features {
-        margin: 3rem 2rem 0;
-        display: flex;
-        padding: 0.5rem;
-        width: 90%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        border-radius: 1.875rem;
-        background: #fff;
-        box-shadow: 0px 9px 50px -19px rgba(0, 0, 0, 0.25);
-      } */
+      /* .carousel {
+	width: 100vw;
+	height: 90vh;
+	position: relative;
+} */
 
-      .features > h2 {
-        color: #1e1e1e;
-        font-size: 2rem;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-      }
-      .features > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+      /* .slide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transition: 500ms opacity ease-in-out;
+	transition-delay: 200ms;
+} */
 
-      .features div > p {
-        color: #1e1e1e;
-        font-size: 1.2rem;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 600;
-      }
+      /* .slide > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+} */
 
-      .testimonials {
-        margin-top: 4rem;
-        background-color: #eee159;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+      /* .slide[data-active] {
+	opacity: 1;
+	transition-delay: 0ms;
+	z-index: 1;
+} */
 
-      .testimonial-section-title {
-        font-size: 1.25rem;
-        margin-top: -1.2rem;
-        display: inline-flex;
-        padding: 0.5rem;
-        border-radius: 0.625rem;
-        background: #fff;
-        box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.25);
-
-        color: #1e1e1e;
-        text-align: center;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 600;
-      }
-
-      .testimonials-card {
-        margin: 2rem 1.25rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.75rem;
-        border-radius: 1.25rem;
-        background: #fff;
-      }
-
-      .content p {
-        text-align: left;
-      }
-
-      .content span {
-        margin: 0.7rem;
-        display: block;
-      }
-
-      .product-pack {
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .product-pack p {
-        color: #1e1e1e;
-        text-align: center;
-        font-size: 0.875rem;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
-
-      .product-pack a {
-        color: #fff;
-        text-align: center;
-        font-size: 0.875rem;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        text-decoration: none;
-        padding: 1rem 2rem;
-        border-radius: 0.5rem;
-        background: #1e1e1e;
-        box-shadow: 0px 9px 50px 0px rgba(0, 0, 0, 0.25);
-      }
-
-      footer {
-        margin-top: 1rem;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        background-color: #1e1e1e;
-      }
-
-      footer > div {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      footer h3 {
-        color: #eee159;
-        font-size: 1rem;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-      }
-
-      footer a {
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 0.75rem;
-        font-family: "Poppins", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
+      /* .carousel-btn {
+	position: absolute;
+	top: 50%;
+	border: none;
+	background: none;
+	font-size: 4rem;
+	z-index: 10;
+	transform: translateY(-50%);
+	color: rgba(255, 255, 255, 0.7);
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+	background-color: rgba(0, 0, 0, 0.1);
+	display: none;
+} */
+      /* .carousel-btn:hover,
+.carousel-btn:focus {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.2);
+} */
     </style>
   </head>
   <body class="relative overflow-x-hidden">
@@ -175,7 +76,7 @@
     </nav>
 
     <section class="h-screen text-center text-xl sm:h-full md:text-left">
-      <ul class="carousel" data-slides>
+      <div class="carousel" data-carousel>
         <button
           class="carousel-btn prev"
           data-carousel-btn
@@ -190,89 +91,131 @@
         >
           &rArr;
         </button>
-
-        <li class="slide" data-active>
-          <img src="./assets/mobile-bg-1.png" alt="" />
-        </li>
-
-        <li class="slide">
-          <div
-            class="flex h-[80vh] w-screen flex-col items-center justify-center bg-[url('/assets/mobile-bg-1.png')] bg-cover p-10 sm:h-screen md:items-start md:bg-[url('/assets/sm-Default.png')]"
-          >
-            <h1
-              class="text-4xl font-bold text-[#EEE159] md:mt-40 md:max-w-3xl md:text-6xl"
-            >
-              Bringing Financial Convenience to YOU!
-            </h1>
-            <p class="hidden w-4/5 text-white md:block">
-              Experience the ease of cash transactions and POS services brought
-              right to your doorstep with SMS. Say goodbye to long queues and
-              hello to hassle-free financial convenience.
-            </p>
-            <p class="text-white md:hidden">
-              Say goodbye to long queues and Hello to on-demand cash
-              transactions.
-            </p>
-            <div
-              class="mt-10 hidden max-w-[60%] items-center justify-center gap-3 rounded-lg bg-white p-5 md:flex"
-            >
-              <img src="./assets/Ellipse 10.png" alt="Ellipse" />
-              <div>
-                <p>
-                  Ever since I have learnt about SMS, my money related
-                  transactions has always been with them.
-                </p>
-                <p class="mt-3 font-semibold">Tunde Samuel</p>
-              </div>
+        <ul data-slides>
+          <li class="slide" data-active>
+            <div>
+              <h1
+                class="text-4xl font-bold text-[#EEE159] md:mt-40 md:max-w-3xl md:text-6xl"
+              >
+                Bringing Financial Convenience to YOU!
+              </h1>
+              <p class="hidden w-4/5 text-white md:block">
+                Experience the ease of cash transactions and POS services
+                brought right to your doorstep with SMS. Say goodbye to long
+                queues and hello to hassle-free financial convenience.
+              </p>
+              <p class="">
+                Say goodbye to long queues and Hello to on-demand cash
+                transactions.
+              </p>
+              <img src="./assets/images/comment-1.png" alt="" />
+              <!-- <div
+                class="mt-10 hidden max-w-[60%] items-center justify-center gap-3 rounded-lg bg-white p-5 md:flex"
+              >
+                <img src="./assets/Ellipse 10.png" alt="Ellipse" />
+                <div>
+                  <p>
+                    Ever since I have learnt about SMS, my money related
+                    transactions has always been with them.
+                  </p>
+                  <p class="mt-3 font-semibold">Tunde Samuel</p>
+                </div>
+              </div> -->
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="slide">
-          <img src="./assets/mobile-bg-3.png" alt="" />
-        </li>
+          <li class="slide">
+            <div>
+              <h1
+                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
+              >
+                Seamless Convinience at Your Fingertips
+              </h1>
+              <p class="hidden w-4/5 text-black md:block">
+                Experience the ease of cash transactions and POS services
+                brought right to your doorstep with SMS. Say goodbye to long
+                queues and hello to hassle-free financial convenience.
+              </p>
+              <p class="">
+                At SMS, we pride ourselves on delivering exceptional service
+                with every transaction. Our dedicated team goes above and beyond
+                to ensure your experience is seamless, reliable, and exceeds
+                your expectations.
+              </p>
+              <img src="./assets/images/comment-2.png" alt="" />
+            </div>
+          </li>
 
-        <li class="slide">
-          <img src="./assets/mobile-bg-4.png" alt="" />
-        </li>
+          <li class="slide">
+            <div>
+              <h1
+                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
+              >
+                Seamless Convinience at Your Fingertips
+              </h1>
+              <p class="hidden w-4/5 text-black md:block">
+                Experience the ease of cash transactions and POS services
+                brought right to your doorstep with SMS. Say goodbye to long
+                queues and hello to hassle-free financial convenience.
+              </p>
+              <p class="">
+                At SMS, we pride ourselves on delivering exceptional service
+                with every transaction. Our dedicated team goes above and beyond
+                to ensure your experience is seamless, reliable, and exceeds
+                your expectations.
+              </p>
+              <img src="./assets/images/comment-2.png" alt="" />
+            </div>
+          </li>
 
-        <li class="slide">
-          <img src="./assets/mobile-bg-5.png" alt="" />
-        </li>
-      </ul>
+          <li class="slide">
+            <div>
+              <h1
+                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
+              >
+                Seamless Convinience at Your Fingertips
+              </h1>
+              <p class="hidden w-4/5 text-black md:block">
+                Experience the ease of cash transactions and POS services
+                brought right to your doorstep with SMS. Say goodbye to long
+                queues and hello to hassle-free financial convenience.
+              </p>
+              <p class="">
+                At SMS, we pride ourselves on delivering exceptional service
+                with every transaction. Our dedicated team goes above and beyond
+                to ensure your experience is seamless, reliable, and exceeds
+                your expectations.
+              </p>
+              <img src="./assets/images/comment-2.png" alt="" />
+            </div>
+          </li>
 
-      <!-- <div
-        class="flex h-[80vh] w-screen flex-col items-center justify-center bg-[url('/assets/mobile-bg-1.png')] bg-cover p-10 sm:h-screen md:items-start md:bg-[url('/assets/sm-Default.png')]"
-      >
-        <h1
-          class="text-4xl font-bold text-[#EEE159] md:mt-40 md:max-w-3xl md:text-6xl"
-        >
-          Bringing Financial Convenience to YOU!
-        </h1>
-        <p class="hidden w-4/5 text-white md:block">
-          Experience the ease of cash transactions and POS services brought
-          right to your doorstep with SMS. Say goodbye to long queues and hello
-          to hassle-free financial convenience.
-        </p>
-        <p class="text-white md:hidden">
-          Say goodbye to long queues and Hello to on-demand cash transactions.
-        </p>
-        <div
-          class="mt-10 hidden max-w-[60%] items-center justify-center gap-3 rounded-lg bg-white p-5 md:flex"
-        >
-          <img src="./assets/Ellipse 10.png" alt="Ellipse" />
-          <div>
-            <p>
-              Ever since I have learnt about SMS, my money related transactions
-              has always been with them.
-            </p>
-            <p class="mt-3 font-semibold">Tunde Samuel</p>
-          </div>
-        </div>
-      </div> -->
+          <li class="slide">
+            <div>
+              <h1
+                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
+              >
+                Seamless Convinience at Your Fingertips
+              </h1>
+              <p class="hidden w-4/5 text-black md:block">
+                Experience the ease of cash transactions and POS services
+                brought right to your doorstep with SMS. Say goodbye to long
+                queues and hello to hassle-free financial convenience.
+              </p>
+              <p class="">
+                At SMS, we pride ourselves on delivering exceptional service
+                with every transaction. Our dedicated team goes above and beyond
+                to ensure your experience is seamless, reliable, and exceeds
+                your expectations.
+              </p>
+              <img src="./assets/images/comment-2.png" alt="" />
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <div
-        class="flex items-center justify-center p-10 text-2xl sm:p-20 sm:text-3xl"
+        class="sm:text-3x flex items-center justify-center p-10 text-2xl sm:p-20"
       >
         <p class="text-center">
           SMS have successfully servced over
@@ -281,6 +224,7 @@
         </p>
       </div>
     </section>
+
     <section class="flex items-center justify-center gap-5">
       <div class="hidden md:block">
         <img
@@ -317,7 +261,6 @@
     </section>
 
     <section aria-label="Newest-Photos"></section>
-
     <!-- COPIED -->
     <div class="features">
       <h2>Our Services</h2>
@@ -399,10 +342,14 @@
 
     <section class="product-pack">
       <div class="product-img-container">
-        <img class="productItem" src="./assets/img/product-pack-i.png" alt="" />
         <img
           class="productItem"
-          src="./assets/img/product-pack-ii.png"
+          src="./assets/images/product-pack-i.png"
+          alt=""
+        />
+        <img
+          class="productItem"
+          src="./assets/images/product-pack-ii.png"
           alt=""
         />
       </div>

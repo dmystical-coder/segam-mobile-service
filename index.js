@@ -18,7 +18,9 @@ let initialX = null;
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const offset = btn.dataset.carouselButton === "next" ? 1 : -1;
-    const slides = btn.closest("[data-carousel]").querySelector("[data-slides");
+    const slides = btn
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]");
 
     const activeSlide = slides.querySelector("[data-active]");
     let newIndex = [...slides.children].indexOf(activeSlide) + offset;
@@ -33,7 +35,7 @@ buttons.forEach((btn) => {
 
 setInterval(() => {
   nextBtn.click();
-}, 7000);
+}, 3000);
 
 slideContainer.addEventListener("touchstart", (e) => {
   initialX = e.touches[0].clientX;
@@ -60,8 +62,6 @@ const images = document.getElementsByClassName("productItem");
 let imageIndex = 0;
 const numberOfImages = images.length;
 
-showImages();
-
 function showImages() {
   let i;
   for (i = 0; i < numberOfImages; i++) {
@@ -76,3 +76,5 @@ function showImages() {
 
   setTimeout(showImages, 2000); // Change image every 2 seconds
 }
+
+showImages();

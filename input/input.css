@@ -7,20 +7,61 @@
   .carousel {
     @apply relative h-full w-screen;
   }
+  /*  sm:h-full  text-center text-xl  md:text-left */
 
   .slide {
-    @apply absolute inset-[0] h-[70vh] text-center text-xl opacity-0 transition-opacity delay-200 duration-500 ease-in-out sm:h-full md:text-left;
+    @apply hidden inset-[0] opacity-0 transition-opacity delay-200 duration-500 ease-in-out;
   }
 
-  .slide > img {
-    @apply block h-full w-full object-cover object-center;
-  }
+  /* h-[70vh] text-center text-xl sm:h-full md:text-left */
+
   .slide > div {
-    @apply block h-full w-full;
+    @apply flex h-[80vh] w-screen flex-col items-center justify-center gap-3 bg-cover p-10 sm:h-screen md:items-start;
+  }
+
+  .slide > div p:last-child {
+    @apply md:hidden;
+  }
+
+  .slide img {
+    @apply hidden object-cover object-center sm:block;
+  }
+  .slide:nth-child(1) > div p:last-child {
+    @apply text-white;
+  }
+
+  .slide:nth-child(2) > div p:last-child,
+  .slide:nth-child(3) > div p:last-child,
+  .slide:nth-child(5) > div p:last-child {
+    @apply text-black;
+  }
+
+  .slide:nth-child(4) > div p:last-child {
+    @apply text-[#eee159];
+  }
+
+  .slide:nth-child(1) > div {
+    @apply bg-[url('/assets/images/mobile-bg-1.png')] md:bg-[url('/assets/images/lg-bg-1.png')];
+  }
+
+  .slide:nth-child(2) > div {
+    @apply bg-[url('/assets/images/mobile-bg-2.png')] md:bg-[url('/assets/images/lg-bg-2.png')];
+  }
+
+  .slide:nth-child(3) > div {
+    @apply bg-[url('/assets/images/mobile-bg-3.png')] md:bg-[url('/assets/images/lg-bg-3.png')];
+  }
+
+  .slide:nth-child(4) > div {
+    @apply bg-[url('/assets/images/mobile-bg-4.png')] md:bg-[url('/assets/images/lg-bg-4.png')];
+  }
+
+  .slide:nth-child(5) > div {
+    @apply bg-[url('/assets/images/mobile-bg-5.png')] md:bg-[url('/assets/images/lg-bg-5.png')];
   }
 
   .slide[data-active] {
-    @apply z-[1] opacity-100 delay-0;
+    @apply z-[1] block opacity-100 delay-0;
   }
 
   .carousel-btn {
@@ -50,5 +91,65 @@
 
   .features {
     @apply m-12 flex w-[90%] flex-col items-center justify-center gap-2 rounded-3xl bg-white p-2 shadow-lg;
+  }
+
+  .features > h2 {
+    @apply flex font-serif text-3xl font-semibold;
+  }
+
+  .features > div {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .features div > p {
+    @apply flex flex-col font-serif text-xl font-semibold text-[#1e1e1e];
+  }
+
+  .testimonials {
+    @apply mt-16 flex flex-col items-center justify-center bg-[#eee159];
+  }
+
+  .testimonial-section-title {
+    @apply -mt-5 inline-flex rounded-lg bg-white p-5 text-center text-xl text-[#1e1e1e] shadow-lg;
+  }
+
+  .testimonials-card {
+    @apply mx-5 my-8 items-center justify-center gap-3 rounded-2xl bg-white p-4;
+  }
+
+  .content p {
+    @apply text-left;
+  }
+
+  .content span {
+    @apply m-3 block;
+  }
+
+  .product-pack {
+    @apply mt-6 flex flex-col items-center justify-center;
+  }
+
+  .product-pack p {
+    @apply text-center text-sm font-normal text-[#1e1e1e];
+  }
+
+  .product-pack a {
+    @apply text-center text-sm font-normal text-white;
+  }
+
+  footer {
+    @apply mt-4 flex justify-center gap-12 bg-[#1e1e1e] p-4;
+  }
+
+  footer > div {
+    @apply flex flex-col gap-2;
+  }
+
+  footer h3 {
+    @apply text-base text-[#eee159];
+  }
+
+  footer a {
+    @apply text-xs font-normal text-white;
   }
 }
