@@ -3416,29 +3416,6 @@ label {
 
 /* npx tailwind -i ./input/find.css -o ./css/find.css --watch  */
 
-.search-wrap {
-  margin-bottom: 2.5rem;
-  display: flex;
-  border-radius: 1.5rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.search-wrap input {
-  border-style: none;
-  background-color: transparent;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-  outline-width: 0px;
-}
-
 .select-wrap {
   margin-left: auto;
   margin-right: auto;

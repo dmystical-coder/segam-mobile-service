@@ -3666,16 +3666,8 @@ html{
 }
 
 @media (min-width: 640px) {
-  .sm\:order-1 {
-    order: 1;
-  }
-
   .sm\:order-none {
     order: 0;
-  }
-
-  .sm\:order-first {
-    order: -9999;
   }
 
   .sm\:h-auto {
