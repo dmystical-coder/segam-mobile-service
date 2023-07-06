@@ -10,6 +10,68 @@
   <title>SMS Edu</title>
 </head>
 
+<style>
+  .hero {
+    border-radius: 0rem 0rem 1.875rem 1.875rem;
+    background: #1E1E1E;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    color: #EEE159;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 133.5%;
+  }
+
+  .hero p {
+    color: #EEE159;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .search-field {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-radius: 6.25rem;
+    border: 1px solid #FFF;
+  }
+
+  .search-field input {
+    background-color: #1E1E1E;
+    color: rgba(255, 255, 255, 0.30);
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .select-wrap h2 {
+    color: #1E1E1E;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+</style>
+
 <body>
   <nav class="bg-[#00000099] border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -39,7 +101,7 @@
               Us</a>
           </li>
           <li>
-            <a href="#services"
+            <a href="./index.html#services"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
               Services</a>
           </li>
@@ -49,7 +111,7 @@
               Edu</a>
           </li>
           <li>
-            <a href="#product"
+            <a href="./index.html#product"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
               Product</a>
           </li>
@@ -71,29 +133,19 @@
     </div>
   </div>
   <header>
-    <div class="header-text-wrap">
-      <h1 style="color: #EEE159;
-      font-size: 1.5rem;
-      font-family: 'Poppins', sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 133.5%;">Let Us Help You
+    <div class="hero">
+      <h1>Let Us Help You
         Lead Your Mates!</h1>
-      <p style="color: #EEE159;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;">Find and download useful courses materials and past questions, all for free.</p>
-    </div>
-    <div class="search-wrap">
-      <label for="search">search</label>
-      <input name="search" type="text" placeholder="Quick Search" />
-      <img src="./assets/icons/Search icon.svg" alt="" />
+      <p>Find and download useful course materials and past questions, all for free.</p>
+
+      <div class="search-field">
+        <input type="text" name="search" id="search" placeholder="Quick Search">
+        <img src="./assets/icons/search-icon.svg" alt="">
+      </div>
     </div>
   </header>
   <div class="select-wrap">
-    <h1>Advance search</h1>
+    <h2>Advance search</h2>
 
     <div>
       <p>Institution</p>
