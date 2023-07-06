@@ -13,26 +13,9 @@
     @apply relative overflow-x-hidden;
   }
 
-  header {
-    @apply mx-auto flex max-w-5xl flex-col items-center justify-center gap-3 rounded-b-3xl bg-[#1e1e1e] pt-4 text-center text-[#eee159];
-  }
-  header .header-text-wrap {
-    @apply w-80 md:w-full;
-  }
-
-  header p {
-    @apply text-2xl;
-  }
   label {
     @apply hidden;
   }
-}
-
-.search-wrap {
-  @apply mb-10 flex rounded-3xl border border-gray-400 px-5 py-2;
-}
-.search-wrap input {
-  @apply border-none bg-transparent text-2xl text-gray-400 outline-0;
 }
 
 .select-wrap {
