@@ -885,6 +885,25 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  max-width: 64rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 30 30 / var(--tw-bg-opacity));
+  padding-top: 1rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(238 225 89 / var(--tw-text-opacity));
+}
+
 label {
   display: none;
 }
@@ -3397,6 +3416,29 @@ label {
 
 /* npx tailwind -i ./input/find.css -o ./css/find.css --watch  */
 
+.search-wrap {
+  margin-bottom: 2.5rem;
+  display: flex;
+  border-radius: 1.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.search-wrap input {
+  border-style: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+  outline-width: 0px;
+}
+
 .select-wrap {
   margin-left: auto;
   margin-right: auto;
@@ -3846,14 +3888,6 @@ footer a {
 @media (min-width: 640px) {
   .sm\:order-none {
     order: 0;
-  }
-
-  .sm\:order-1 {
-    order: 1;
-  }
-
-  .sm\:order-first {
-    order: -9999;
   }
 
   .sm\:h-auto {
