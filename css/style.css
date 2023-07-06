@@ -2691,19 +2691,14 @@ input:checked + .toggle-bg {
      object-fit: scale-down;
 }
 
-.object-center {
-  -o-object-position: center;
-     object-position: center;
-}
-
-.object-top {
-  -o-object-position: top;
-     object-position: top;
-}
-
 .object-bottom {
   -o-object-position: bottom;
      object-position: bottom;
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-1 {
@@ -3671,8 +3666,16 @@ html{
 }
 
 @media (min-width: 640px) {
+  .sm\:order-1 {
+    order: 1;
+  }
+
   .sm\:order-none {
     order: 0;
+  }
+
+  .sm\:order-first {
+    order: -9999;
   }
 
   .sm\:h-auto {
@@ -3857,10 +3860,6 @@ html{
 @media (min-width: 1024px) {
   .lg\:w-2\/5 {
     width: 40%;
-  }
-
-  .lg\:w-3\/5 {
-    width: 60%;
   }
 
   .lg\:w-4\/5 {
