@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-item,
+.carousel-item-hidden {
+  display: none;
+}
+
+.hero-i > h1,
+.hero-iv > p {
+  color: #eee159;
+}
+.hero-i > p,
+.hero-iv > h1 {
+  color: #ffffff;
+}
+
+main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.agent a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.content p {
+  text-align: left;
+}
+
+.content span {
+  margin: 0.7rem;
+  display: block;
+}
+
+.testimonials-card img{
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+}
+
+.testimonials-card p {
+  color: #1e1e1e;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  background-color: #1e1e1e;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer h3 {
+  color: #eee159;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

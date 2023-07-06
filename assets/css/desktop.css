@@ -1,0 +1,225 @@
+@media (min-width: 768px) {
+  .mobile-hidden {
+    display: block;
+  }
+  .desktop-hidden {
+    display: none;
+  }
+  
+  .hero-i > h1,
+  .hero-ii > h1,
+  .hero-iii > h1,
+  .hero-iv > h1,
+  .hero-v > h1,
+  .hero-i > p,
+  .hero-ii > p,
+  .hero-iii > p,
+  .hero-iv > p,
+  .hero-v > p {
+    text-align: left;
+    width: 48rem;
+  }
+
+  .hero-i > h1,
+  .hero-ii > h1,
+  .hero-iii > h1,
+  .hero-iv > h1,
+  .hero-v > h1 {
+    font-size: 4rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .hero-i > p,
+  .hero-ii > p,
+  .hero-iii > p,
+  .hero-iv > p,
+  .hero-v > p {
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .hero-i-desktop {
+    background: url(../img/hero-img-i-desktop.png);
+    height: 45rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6rem 1.5rem;
+  }
+
+  .hero-ii-desktop {
+    background: url(../img/hero-img-ii-desktop.png);
+    height: 45rem;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 6rem 1.5rem;
+  }
+
+  .hero-iii-desktop {
+    background: url(../img/hero-img-iii-desktop.png);
+    height: 45rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 1.5rem;
+  }
+
+  .hero-iv-desktop {
+    background: url(../img/hero-img-iv-desktop.png);
+    height: 45rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 1.5rem;
+  }
+
+  .hero-v-desktop {
+    background: url(../img/hero-img-v-desktop.png);
+    height: 45rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6rem 1.5rem;
+  }
+
+  .testimonials-card {
+    width: 40rem;
+    margin: 3rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    background: #fff;
+  }
+  .testimonials-card p {
+    font-size: 1.2rem;
+  }
+
+  main .stats {
+    margin-top: 3rem;
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 2.25rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 133.5%;
+  }
+
+  main .cta {
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cta-text h2 {
+    color: #1e1e1e;
+    font-size: 4rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 133.5%;
+  }
+  .cta-text p {
+    color: #1e1e1e;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .pos-agents {
+    display: flex;
+    align-items: flex-end;
+    gap: 3.5rem;
+  }
+
+  .agent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .agent a {
+    text-decoration: none;
+    color: #1e1e1e;
+    font-size: 1rem;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    background: #eee159;
+    box-shadow: 9px 4px 50px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .product-pack {
+    background-color: #96969699;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .product-pack-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .product-pack-content h2 {
+    color: #1e1e1e;
+    font-size: 2.25rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 133.5%;
+  }
+
+  .product-pack-content p {
+    color: #1e1e1e;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .product-pack-content a {
+    text-decoration: none;
+    padding: 1rem;
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 1.25rem;
+    background: #eee159;
+    box-shadow: 0px 9px 50px 0px rgba(0, 0, 0, 0.25);
+  }
+  footer{
+    margin-top: 0;
+    justify-content: space-around;
+  }
+  footer h3{
+    font-size: 1.75rem;
+  }
+  footer a{
+    font-size: 1rem;
+  }
+}
