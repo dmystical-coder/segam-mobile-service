@@ -1,401 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>Segam Mobile Service</title>
-    <style>
-      /* .carousel {
-	width: 100vw;
-	height: 90vh;
-	position: relative;
-} */
 
-      /* .slide {
-	position: absolute;
-	inset: 0;
-	opacity: 0;
-	transition: 500ms opacity ease-in-out;
-	transition-delay: 200ms;
-} */
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SMS</title>
 
-      /* .slide > img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-} */
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./assets/css/index.css">
+	<link rel="stylesheet" href="./assets/css/mobile.css">
+	<link rel="stylesheet" href="./assets/css/desktop.css">
+</head>
 
-      /* .slide[data-active] {
-	opacity: 1;
-	transition-delay: 0ms;
-	z-index: 1;
-} */
+<body>
+	<div class="page-container">
+		<header>
+			<nav class="bg-[#00000099] border-gray-200 dark:bg-gray-900">
+				<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+					<a href="./index.html" class="flex items-center">
+						<img src="./assets/img/sms-logo.png" class="mr-3" alt="SMS Logo" />
+					</a>
+					<button data-collapse-toggle="navbar-default" type="button"
+						class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						aria-controls="navbar-default" aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg class="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+							viewBox="0 0 17 14">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M1 1h15M1 7h15M1 13h15" />
+						</svg>
+					</button>
+					<div class="hidden w-full md:block md:w-auto" id="navbar-default">
+						<ul
+							class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-inherit dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+							<li>
+								<a href="javascript:void(0)"
+									class="bold block py-2 pl-3 pr-4 text-white bg-[#EEE159] rounded md:bg-transparent md:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500"
+									aria-current="page">Home</a>
+							</li>
+							<li>
+								<a href="./about.html"
+									class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0
+									md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About
+									Us</a>
+							</li>
+							<li>
+								<a href="#services"
+									class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
+									Services</a>
+							</li>
+							<li>
+								<a href="./find.html"
+									class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+									Edu</a>
+							</li>
+							<li>
+								<a href="#product"
+									class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+									Product</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 
-      /* .carousel-btn {
-	position: absolute;
-	top: 50%;
-	border: none;
-	background: none;
-	font-size: 4rem;
-	z-index: 10;
-	transform: translateY(-50%);
-	color: rgba(255, 255, 255, 0.7);
-	border-radius: 0.25rem;
-	padding: 0.5rem;
-	background-color: rgba(0, 0, 0, 0.1);
-	display: none;
-} */
-      /* .carousel-btn:hover,
-.carousel-btn:focus {
-	color: white;
-	background-color: rgba(0, 0, 0, 0.2);
-} */
-    </style>
-  </head>
-  <body class="relative overflow-x-hidden">
-    <nav
-      class="absolute mt-10 flex w-screen items-center justify-between px-10 py-5"
-    >
-      <img src="/assets/icons/SMS LOGO 1.png" class="w-18" alt="logo" />
-      <img
-        class="ham h-8 w-8 sm:hidden"
-        src="./assets/ham.svg"
-        alt="hamburger"
-      />
-      <ul
-        class="toggle after:bg-blur-3xl absolute right-0 top-0 z-20 hidden flex-col gap-5 rounded-3xl border bg-white p-20 after:absolute after:-top-10 after:right-0 after:-z-[1] after:h-screen after:w-screen after:bg-black after:opacity-30 sm:flex sm:flex-row sm:border-0 sm:bg-transparent sm:p-5 sm:text-white sm:after:hidden"
-      >
-        <li>Home</li>
-        <li>SMS Edu</li>
-        <li>About</li>
-      </ul>
-    </nav>
 
-    <section class="h-screen text-center text-xl sm:h-full md:text-left">
-      <div class="carousel" data-carousel>
-        <button
-          class="carousel-btn prev"
-          data-carousel-btn
-          data-carousel-button="prev"
-        >
-          &lArr;
-        </button>
-        <button
-          class="carousel-btn next"
-          data-carousel-btn
-          data-carousel-button="next"
-        >
-          &rArr;
-        </button>
-        <ul data-slides>
-          <li class="slide" data-active>
-            <div>
-              <h1
-                class="text-4xl font-bold text-[#EEE159] md:mt-40 md:max-w-3xl md:text-6xl"
-              >
-                Bringing Financial Convenience to YOU!
-              </h1>
-              <p class="hidden w-4/5 text-white md:block">
-                Experience the ease of cash transactions and POS services
-                brought right to your doorstep with SMS. Say goodbye to long
-                queues and hello to hassle-free financial convenience.
-              </p>
-              <p class="">
-                Say goodbye to long queues and Hello to on-demand cash
-                transactions.
-              </p>
-              <img src="./assets/images/comment-1.png" alt="" />
-              <!-- <div
-                class="mt-10 hidden max-w-[60%] items-center justify-center gap-3 rounded-lg bg-white p-5 md:flex"
-              >
-                <img src="./assets/Ellipse 10.png" alt="Ellipse" />
-                <div>
-                  <p>
-                    Ever since I have learnt about SMS, my money related
-                    transactions has always been with them.
-                  </p>
-                  <p class="mt-3 font-semibold">Tunde Samuel</p>
-                </div>
-              </div> -->
-            </div>
-          </li>
+			<div class="carousel-container">
+				<div class="hero-i hero-i-mobile hero-i-desktop carousel-item">
+					<h1 style="color: #eee159;">Bringing Financial Convenience to YOU!</h1>
+					<p style="color: #FFFFFF;">Say goodbye to long queues and Hello to on-demand cash transactions. </p>
 
-          <li class="slide">
-            <div>
-              <h1
-                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
-              >
-                Seamless Convinience at Your Fingertips
-              </h1>
-              <p class="hidden w-4/5 text-black md:block">
-                Experience the ease of cash transactions and POS services
-                brought right to your doorstep with SMS. Say goodbye to long
-                queues and hello to hassle-free financial convenience.
-              </p>
-              <p class="">
-                At SMS, we pride ourselves on delivering exceptional service
-                with every transaction. Our dedicated team goes above and beyond
-                to ensure your experience is seamless, reliable, and exceeds
-                your expectations.
-              </p>
-              <img src="./assets/images/comment-2.png" alt="" />
-            </div>
-          </li>
+					<div class="mobile-hidden testimonials-card">
+						<img src="./assets/img/client-i.jpg" alt="">
+						<div class="content">
+							<p>Ever since I have learnt about SMS, my money related transactions has always been with
+								them.
+								<span>- Tunde Samuel</span>
+							</p>
+						</div>
+					</div>
+				</div>
 
-          <li class="slide">
-            <div>
-              <h1
-                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
-              >
-                Seamless Convinience at Your Fingertips
-              </h1>
-              <p class="hidden w-4/5 text-black md:block">
-                Experience the ease of cash transactions and POS services
-                brought right to your doorstep with SMS. Say goodbye to long
-                queues and hello to hassle-free financial convenience.
-              </p>
-              <p class="">
-                At SMS, we pride ourselves on delivering exceptional service
-                with every transaction. Our dedicated team goes above and beyond
-                to ensure your experience is seamless, reliable, and exceeds
-                your expectations.
-              </p>
-              <img src="./assets/images/comment-2.png" alt="" />
-            </div>
-          </li>
+				<div class="hero-ii hero-ii-mobile hero-ii-desktop carousel-item">
+					<h1>Financial Convenience
+						at Your Fingertips</h1>
+					<p>Experience the ease of POS services anywhere on campus. Say goodbye to long queues and hello to
+						financial convenience.</p>
 
-          <li class="slide">
-            <div>
-              <h1
-                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
-              >
-                Seamless Convinience at Your Fingertips
-              </h1>
-              <p class="hidden w-4/5 text-black md:block">
-                Experience the ease of cash transactions and POS services
-                brought right to your doorstep with SMS. Say goodbye to long
-                queues and hello to hassle-free financial convenience.
-              </p>
-              <p class="">
-                At SMS, we pride ourselves on delivering exceptional service
-                with every transaction. Our dedicated team goes above and beyond
-                to ensure your experience is seamless, reliable, and exceeds
-                your expectations.
-              </p>
-              <img src="./assets/images/comment-2.png" alt="" />
-            </div>
-          </li>
+					<div class="mobile-hidden testimonials-card" style="background-color: #1E1E1E;">
+						<img src="./assets/img/client-ii.jpg" alt="">
+						<div class="content">
+							<p style="color: #FFFFFF;">
+								I do wish SMS can operate outside the campus premises cos omooo!
 
-          <li class="slide">
-            <div>
-              <h1
-                class="text-4xl font-bold text-black md:mt-40 md:max-w-3xl md:text-6xl"
-              >
-                Seamless Convinience at Your Fingertips
-              </h1>
-              <p class="hidden w-4/5 text-black md:block">
-                Experience the ease of cash transactions and POS services
-                brought right to your doorstep with SMS. Say goodbye to long
-                queues and hello to hassle-free financial convenience.
-              </p>
-              <p class="">
-                At SMS, we pride ourselves on delivering exceptional service
-                with every transaction. Our dedicated team goes above and beyond
-                to ensure your experience is seamless, reliable, and exceeds
-                your expectations.
-              </p>
-              <img src="./assets/images/comment-2.png" alt="" />
-            </div>
-          </li>
-        </ul>
-      </div>
+								<span>- Mausi</span>
+							</p>
+						</div>
+					</div>
+				</div>
 
-      <div
-        class="sm:text-3x flex items-center justify-center p-10 text-2xl sm:p-20"
-      >
-        <p class="text-center">
-          SMS have successfully servced over
-          <span class="font-semibold"> 600+ customers</span> within the Campus
-          and still counting..........
-        </p>
-      </div>
-    </section>
+				<div class="hero-iii hero-iii-mobile hero-iii-desktop carousel-item">
+					<h1>Exceptional Service, Every Time</h1>
+					<p>At SMS, we pride ourselves on delivering exceptional service with every transaction. Our
+						dedicated team goes above and beyond to ensure your experience is seamless and worthwile.</p>
 
-    <section class="flex items-center justify-center gap-5">
-      <div class="hidden md:block">
-        <img
-          src="./assets/images/ambassador.png"
-          class="with relative bottom-0"
-          alt="girl"
-        />
-      </div>
-      <div class="text-center">
-        <h1 class="px-10 py-10 text-5xl font-bold">
-          Do YOU need an instant
-          <span class="text-[#eee159] sm:text-black"> CASH?</span>
-        </h1>
-        <p class="px-10 text-2xl">
-          Connect with our fast and reliable agents to get it sorted in less
-          time.
-        </p>
-        <div class="flex items-center justify-center">
-          <!-- CARD 1 -->
-          <div class="card">
-            <div class="relative">
-              <img src="./assets/images/pos-agent-i.png" class="" alt="" />
-            </div>
-          </div>
+					<div class="mobile-hidden testimonials-card" style="background-color: #1E1E1E;">
+						<img src="./assets/img/client-iii.jpeg" alt="">
+						<div class="content">
+							<p style="color: #EEE159;">If you haven't used SMS service, what will I tell you other than,
+								“Dey play!”
+								<span>- Ranfire (LASUSU Social Director)</span>
+							</p>
+						</div>
+					</div>
+				</div>
 
-          <!-- CARD 2 -->
-          <div class="card">
-            <div class="relative">
-              <img src="./assets/images/pos-agent-ii.png" class="" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+				<div class="hero-iv hero-iv-mobile hero-iv-desktop carousel-item">
+					<h1 style="color: #FFFFFF;">Enabling Your
+						Financial Freedom</h1>
+					<p style="color: #eee159;">SMS empowers you to take control of your financial transactions. With our
+						innovative mobile
+						POS
+						platform, you have the power to withdraw, deposit, and access a range of services whenever
+						and
+						wherever you need them.</p>
 
-    <section aria-label="Newest-Photos"></section>
-    <!-- COPIED -->
-    <div class="features">
-      <h2>Our Services</h2>
-      <div>
-        <img src="./assets/icons/pos-icon.png" alt="" />
-        <p>Mobile POS Service</p>
-      </div>
-      <div>
-        <img src="./assets/icons/box-open 1.png" alt="" />
-        <p>SMS Product Pack</p>
-      </div>
-      <div>
-        <img src="./assets/icons/books 1.png" alt="" />
-        <p>SMS Educational Services</p>
-      </div>
-    </div>
-    <section class="testimonials">
-      <h3 class="testimonial-section-title">Why you should Trust SMS</h3>
+					<div class="mobile-hidden testimonials-card">
+						<img src="./assets/img/client-iv.jpeg" alt="">
+						<div class="content">
+							<p>I thought I was going to trek home today until a friend told me about SMS, it all
+								happened like flash!
 
-      <div class="carousel-container">
-        <div class="testimonials-card">
-          <img src="./assets/img/person-1.svg" alt="" />
-          <div class="content">
-            <p>
-              Ever since I have learnt about SMS, my money related transactions
-              has always been with them.
-              <span>- Tunde Samuel</span>
-            </p>
-          </div>
-        </div>
+								<span>- Halima</span>
+							</p>
+						</div>
+					</div>
+				</div>
 
-        <div class="testimonials-card" style="background-color: #1e1e1e">
-          <img src="./assets/img/person-2.svg" alt="" />
-          <div class="content">
-            <p style="color: #ffffff">
-              I do wish SMS can operate outside the campus premises cos omooo!
+				<div class="carousel-item hero-v hero-v-mobile hero-v-desktop">
+					<h1>Reliable and Secure Mobile POS Solutions </h1>
+					<p>Trust SMS for secure and reliable mobile POS services. Our dedicated agents deliver top-notch
+						solutions with utmost professionalism, ensuring your transactions are handled with care.</p>
 
-              <span>- James Mauton</span>
-            </p>
-          </div>
-        </div>
+					<div class="mobile-hidden testimonials-card" style="background-color: #1E1E1E;">
+						<img src="./assets/img/client-v.jpeg" alt="">
+						<div class="content">
+							<p style="color: #FFFFFF;">Na person wey never sabi dey queue for ATM, with very little
+								charges, SMS don sort me!
 
-        <div class="testimonials-card" style="background-color: #1e1e1e">
-          <img src="./assets/img/person-3.svg" alt="" />
-          <div class="content">
-            <p style="color: #eee159">
-              If you haven't used SMS service, what will I tell you other than,
-              “Dey play!”
-              <span>- Rebecca</span>
-            </p>
-          </div>
-        </div>
+								<span>- Basit</span>
+							</p>
 
-        <div class="testimonials-card">
-          <img src="./assets/img/person-1.svg" alt="" />
-          <div class="content">
-            <p>
-              I thought I was going to trek home today until a friend told me
-              about SMS, it all happened like flash!
 
-              <span>- Lekan</span>
-            </p>
-          </div>
-        </div>
+						</div>
+					</div>
+				</div>
 
-        <div class="testimonials-card" style="background-color: #1e1e1e">
-          <img src="./assets/img/person-2.svg" alt="" />
-          <div class="content">
-            <p style="color: #ffffff">
-              Na person wey never sabi dey queue for ATM, with very little
-              charges, SMS don sort me!
 
-              <span>- John</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+			</div>
 
-    <section class="product-pack">
-      <div class="product-img-container">
-        <img
-          class="productItem"
-          src="./assets/images/product-pack-i.png"
-          alt=""
-        />
-        <img
-          class="productItem"
-          src="./assets/images/product-pack-ii.png"
-          alt=""
-        />
-      </div>
-      <h2>SMS Product Pack</h2>
+		</header>
 
-      <p>
-        SMS Products are packaged food items that are made available to students
-        at an affordable cost. Three different food items are made available in
-        an SMS Product package. One of the food items provides you with up to
-        four varieties of food for consumption, while the remaining two give you
-        other tasty food options. Each SMS Product package can sustain a student
-        throughout a week.
-      </p>
+		<main>
 
-      <a href="#">Join the product discussion</a>
-    </section>
+			<p class="stats">SMS have successfully made over <span style="font-weight: bold;">1,500</span> sales
+				within the
+				Campus and still counting...</p>
 
-    <footer>
-      <div>
-        <h3>Company</h3>
-        <a href="#">About Us</a>
-        <a href="#">Our Services</a>
-      </div>
-      <div>
-        <h3>Socials</h3>
-        <a href="https://www.facebook.com/profile.php?id=100086619889189"
-          >Facebook</a
-        >
-        <a href="https://twitter.com/SegamMobileServ">Twitter</a>
-        <a
-          href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ=="
-          >Instagram</a
-        >
-        <a href="https://tiktok.com/@segammobileserv">Tiktok</a>
-        <a
-          href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US"
-          >Snapchat</a
-        >
-        <a href="https://youtube.com/@SegamMobileServices">YouTube</a>
-      </div>
-      <div>
-        <h3>Help</h3>
-        <a href="#">Contact Us</a>
-      </div>
-    </footer>
 
-    <script src="./index.js"></script>
-  </body>
+			<div id="sticky-banner" tabindex="-1"
+				class="z-50 flex justify-between w-full m-4 p-4 border-b border-gray-200 bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+				<div class="flex items-center mx-auto">
+					<p class="flex items-center text-lg font-normal text-gray-500 dark:text-gray-400">
+						<span
+							class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600 w-6 h-6 items-center justify-center">
+							<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
+								<path
+									d="M15 1.943v12.114a1 1 0 0 1-1.581.814L8 11V5l5.419-3.871A1 1 0 0 1 15 1.943ZM7 4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2v5a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V4ZM4 17v-5h1v5H4ZM16 5.183v5.634a2.984 2.984 0 0 0 0-5.634Z" />
+							</svg>
+							<span class="sr-only">Light bulb</span>
+						</span>
+						<span>Check what's trending in <a href="javascript:void(0)"
+								class="inline font-medium text-[#EEE159] underline dark:text-blue-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline">SMS</a></span>
+					</p>
+				</div>
+			</div>
+
+
+			<div class="cta">
+				<img src="./assets/img/ambassador.png" alt="">
+
+				<div class="cta-content">
+
+					<div class="cta-text">
+						<h2>
+							Do YOU need instant <span>CASH</span>?
+						</h2>
+
+						<p>
+							Connect with our fast and reliable
+							agents to get it sorted in less time.
+						</p>
+					</div>
+
+					<div class="pos-agents">
+						<div class="agent">
+							<img src="./assets/img/pos-agent-i.png" alt="">
+							<a href="https://wa.me/2349114747518" target="_blank">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+									style="fill: rgba(0, 0, 0, 1);">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263">
+									</path>
+								</svg>
+								SMS Agent 1</a>
+						</div>
+						<div class="agent">
+							<img src="./assets/img/pos-agent-ii.png" alt="">
+							<a href="https://wa.me/2348134475804" target="_blank">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+									style="fill: rgba(0, 0, 0, 1);">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263">
+									</path>
+								</svg>
+								SMS Agent 2</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="services" class="my-6">
+				<h2 class="my-4 text-4xl font-bold dark:text-white text-center">Our Services</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-4 md:px-0">
+					<div
+						class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+						<a href="./about.html">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mobile POS
+								Service</h5>
+						</a>
+						<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">We provide mobile, campus-based
+							financial services to students and staffs across higher institutions in Nigeria.</p>
+						<a href="./about.html"
+							class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#1e1e1e] bg-[#EEE159] rounded-lg hover:bg-[#B7B7B7] focus:ring-4 focus:outline-none focus:ring-[#B7B7B7] dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							Read more
+							<svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+								fill="none" viewBox="0 0 14 10">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+							</svg>
+						</a>
+					</div>
+
+
+					<div
+						class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+						<a href="javascript:void(0)">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SMS Product
+								Pack</h5>
+						</a>
+						<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">SMS Products are packaged food
+							items that are made available to students at an affordable cost.</p>
+						<a href="javascript:void(0)"
+							class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#1e1e1e] bg-[#EEE159] rounded-lg hover:bg-[#B7B7B7] focus:ring-4 focus:outline-none focus:ring-[#B7B7B7] dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							Read more
+							<svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+								fill="none" viewBox="0 0 14 10">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+							</svg>
+						</a>
+					</div>
+
+
+					<div
+						class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+						<a href="javascript:void(0)">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Dispatch
+								Unit</h5>
+						</a>
+						<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">SMS accounts for the transportation
+							and delivery of SMS-affiliated goods. Internal Dispatch enables the delivery of SMS products
+							on campus. External Dispatch allows for the delivery of P2P brands off campus.</p>
+						<a href="javascript:void(0)"
+							class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#1e1e1e] bg-[#EEE159] rounded-lg hover:bg-[#B7B7B7] focus:ring-4 focus:outline-none focus:ring-[#B7B7B7] dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							Coming soon!
+							<!-- <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+								fill="none" viewBox="0 0 14 10">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+							</svg> -->
+						</a>
+					</div>
+
+
+					<div
+						class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+						<a href="javascript:void(0)">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">P2P
+								Marketplace</h5>
+						</a>
+						<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">SMS P2P Market is a self-rewarding
+							initiative that connects brand owners with buyers. All brands are authenticated, and they
+							are owned by students and non-students.</p>
+						<a href="javascript:void(0)"
+							class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#1e1e1e] bg-[#EEE159] rounded-lg hover:bg-[#B7B7B7] focus:ring-4 focus:outline-none focus:ring-[#B7B7B7] dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							Coming Soon!
+							<!-- <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+								fill="none" viewBox="0 0 14 10">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+							</svg> -->
+						</a>
+					</div>
+
+					<div
+						class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SMS
+								Educational Service</h5>
+						</a>
+						<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">SMS Educational Services provides
+							useful course materials, past questions and other means of academic intervention to students
+							on campus</p>
+						<a href="./find.html"
+							class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#1e1e1e] bg-[#EEE159] rounded-lg hover:bg-[#B7B7B7] focus:ring-4 focus:outline-none focus:ring-[#B7B7B7] dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							Read more
+							<svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+								fill="none" viewBox="0 0 14 10">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<section class="testimonials desktop-hidden">
+
+				<h3 class="testimonial-section-title">Why you should Trust SMS</h3>
+
+				<div class="carousel-container">
+					<div class="testimonials-card">
+						<img src="./assets/img/client-i.jpg" alt="">
+						<div class="content">
+							<p>Ever since I have learnt about SMS, my money related transactions has always been with
+								them.
+								<span>- Tunde Samuel</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="testimonials-card" style="background-color: #1E1E1E;">
+						<img src="./assets/img/client-ii.jpg" alt="">
+						<div class="content">
+							<p style="color: #FFFFFF;">
+								I do wish SMS can operate outside the campus premises cos omooo!
+
+								<span>- Mausi</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="testimonials-card" style="background-color: #1E1E1E;">
+						<img src="./assets/img/client-iii.jpeg" alt="">
+						<div class="content">
+							<p style="color: #EEE159;">If you haven't used SMS service, what will I tell you other than,
+								“Dey play!”
+								<span>- Ranfire (LASUSU Soial Director)</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="testimonials-card">
+						<img src="./assets/img/client-iv.jpeg" alt="">
+						<div class="content">
+							<p>I thought I was going to trek home today until a friend told me about SMS, it all
+								happened like flash!
+
+								<span>- Halima</span>
+							</p>
+
+
+						</div>
+					</div>
+
+					<div class="testimonials-card" style="background-color: #1E1E1E;">
+						<img src="./assets/img/client-v.jpeg" alt="">
+						<div class="content">
+							<p style="color: #FFFFFF;">Na person wey never sabi dey queue for ATM, with very little
+								charges, SMS don sort me!
+
+								<span>- Basit</span>
+							</p>
+
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="product" class="product-pack">
+				<div class="product-img-container">
+					<picture class="productItem">
+						<source media="(min-width:767px)" srcset="./assets/img/product-pack-img-i-desktop.png">
+
+						<img src="./assets/img/product-pack-i.png" alt="Flowers">
+					</picture>
+
+					<picture class="productItem">
+						<source media="(min-width:767px)" srcset="./assets/img/product-pack-img-ii-desktop.png">
+
+						<img src="./assets/img/product-pack-ii.png" alt="Flowers">
+					</picture>
+				</div>
+				<div class="product-pack-content">
+					<h2>SMS Product Pack</h2>
+
+					<p>
+						SMS Products are packaged food items that are made available to students at an affordable cost.
+						Three different food items are made available in an SMS Product package. One of the food items
+						provides you with up to four varieties of food for consumption, while the remaining two give you
+						other tasty food options. Each SMS Product package can sustain a student throughout a week.
+					</p>
+
+					<a href="#">Join the product discussion</a>
+				</div>
+			</section>
+
+			<h2 id="gallery" class="mt-4 mb-2 text-4xl font-bold dark:text-white text-center bg-[#EEE159] py-2 px-4">SMS Gallery</h2>
+			<div class="my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+				<div>
+					<img class="h-auto max-w-full rounded-lg" src="./assets/img/gallery-img-v.jpeg" alt="">
+				</div>
+				<div>
+					<img class="h-auto max-w-full rounded-lg" src="./assets/img/gallery-img-vi.jpeg" alt="">
+				</div>
+				<div>
+					<img class="h-auto max-w-full rounded-lg" src="./assets/img/gallery-img-vii.jpeg" alt="">
+				</div>
+
+				<div>
+					<img class="h-auto max-w-full rounded-lg" src="./assets/img/gallery-img-i.jpeg" alt="">
+				</div>
+				<div>
+					<img class="h-auto max-w-full rounded-lg" src="./assets/img/gallery-img-ii.jpg" alt="">
+				</div>
+				<div>
+					<img class="h-auto max-w-full rounded-lg" src="./assets/img/gallery-img-iii.jpg" alt="">
+				</div>
+				<div>
+					<img class="h-auto max-w-full rounded-lg" src="./assets/img/gallery-img-iv.jpeg" alt="">
+				</div>
+				<div>
+
+					<video class="h-auto max-w-full" controls>
+						<source src="./assets/vid/gallery-vid-i.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+
+				</div>
+				<div>
+
+					<video class="h-auto max-w-full" controls>
+						<source src="./assets/vid/gallery-vid-ii.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+
+				</div>
+
+			</div>
+
+		</main>
+
+		<footer>
+			<div>
+				<h3>Company</h3>
+				<a href="./about.html">About Us</a>
+				<a href="#services">Our Services</a>
+				<a href="#gallery">Gallery</a>
+			</div>
+			<div>
+				<h3>Socials</h3>
+				<a href="https://www.facebook.com/profile.php?id=100086619889189">Facebook</a>
+				<a href="https://twitter.com/SegamMobileServ">Twitter</a>
+				<a href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ==">Instagram</a>
+				<a href="https://tiktok.com/@segammobileserv">Tiktok</a>
+				<a href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US">Snapchat</a>
+				<a href="https://youtube.com/@SegamMobileServices">YouTube</a>
+			</div>
+			<div>
+				<h3>Help</h3>
+				<a href="./about.html#contact">Contact Us</a>
+			</div>
+		</footer>
+	</div>
+
+	<script src="./assets/js/index.js"></script>
+	<script src="./assets/js/productPack.js"></script>
+	<script src="./assets/js/flowbite.min.js"></script>
+</body>
+
 </html>

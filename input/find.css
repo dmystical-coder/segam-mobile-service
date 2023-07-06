@@ -19,12 +19,7 @@
   header .header-text-wrap {
     @apply w-80 md:w-full;
   }
-  h1 {
-    @apply text-4xl font-bold;
-  }
-  header h1 span {
-    @apply text-4xl;
-  }
+
   header p {
     @apply text-2xl;
   }
@@ -49,11 +44,11 @@
 }
 
 select,
-button {
+.submit {
   @apply h-24 w-full rounded-3xl p-5 text-justify text-2xl drop-shadow focus:outline-0;
 }
 
-button {
+.submit {
   @apply bg-[#eee159] text-center;
 }
 

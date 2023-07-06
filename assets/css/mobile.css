@@ -1,0 +1,323 @@
+@media (min-width: 280px) and (max-width: 1279px) {
+  .carousel-container .mobile-hidden {
+    display: none;
+  }
+  /* handle smooth transitions between slides */
+  @keyframes fadeVisibility {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .hero-i > h1,
+  .hero-ii > h1,
+  .hero-iii > h1,
+  .hero-iv > h1,
+  .hero-v > h1 {
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 1.75rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .hero-i > p,
+  .hero-ii > p,
+  .hero-iii > p,
+  .hero-iv > p,
+  .hero-v > p {
+    margin-top: 0.75rem;
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .hero-i-mobile {
+    background: url(../img/hero-img-i.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8rem 0.5rem;
+    height: 25rem;
+  }
+
+  .hero-ii-mobile {
+    background: url(../img/hero-img-ii.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8rem 0.5rem;
+    height: 25rem;
+  }
+
+  .hero-iii-mobile {
+    background: url(../img/hero-img-iii.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem 0.5rem;
+    height: 25rem;
+  }
+
+  .hero-iv-mobile {
+    background: url(../img/hero-img-iv.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem 0.5rem;
+    height: 25rem;
+  }
+
+  .hero-v-mobile {
+    background: url(../img/hero-img-v.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem 0.5rem;
+    height: 25rem;
+  }
+
+  .stats {
+    padding: 1rem;
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+  }
+
+  .cta-text {
+    background-color: #eee159;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .cta h2 {
+    padding: 1rem;
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .cta h2 span {
+    color: #eee159;
+    background-color: #1e1e1e;
+    padding: 0.25rem;
+  }
+
+  .cta p {
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .cta > img {
+    width: 80%;
+  }
+  .pos-agents {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .agent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .agent a {
+    text-decoration: none;
+    color: #1e1e1e;
+    font-size: 1rem;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background: #eee159;
+    box-shadow: 9px 4px 50px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .features {
+    margin: 3rem 2rem 0;
+    display: flex;
+    padding: 2rem 1rem;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1.875rem;
+    background: #fff;
+    box-shadow: 0px 9px 50px -19px rgba(0, 0, 0, 0.25);
+  }
+
+  .features > h2 {
+    color: #1e1e1e;
+    font-size: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .features > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features div > p {
+    color: #1e1e1e;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .testimonials {
+    margin-top: 4rem;
+    background-color: #eee159;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .testimonial-section-title {
+    font-size: 1.25rem;
+    margin-top: -1.2rem;
+    display: inline-flex;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.625rem;
+    background: #fff;
+    box-shadow: 1px 1px 14px 0px rgba(0, 0, 0, 0.25);
+
+    color: #1e1e1e;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .testimonials-card {
+    margin: 2rem 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 1.25rem;
+    background: #fff;
+  }
+
+  .testimonials-card p {
+    font-size: 0.875rem;
+  }
+
+  .product-pack {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .product-pack-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .product-pack-content h2 {
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 133.5%;
+  }
+
+  .product-pack-content p {
+    color: #1e1e1e;
+    text-align: center;
+    font-size: 0.875rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .product-pack-content a {
+    color: #fff;
+    text-align: center;
+    font-size: 0.875rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background: #1e1e1e;
+    box-shadow: 0px 9px 50px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  footer {
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    background-color: #1e1e1e;
+  }
+
+  footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  footer h3 {
+    color: #eee159;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

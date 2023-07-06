@@ -1,111 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/find.css" />
-    <title>sms find page</title>
-  </head>
-  <body>
-    <div class="err-msg hidden">
-      <div class="err-card">
-        <img src="./assets/icons/cancel.svg" data-cancel="" alt="" />
-        <div class="err-img-wrap">
-          <img src="./assets/icons/err-img.svg" alt="" />
-        </div>
-        <h3>Ooops!</h3>
-        <p>The material you are looking for cannot be found!</p>
-        <button data-click="">
-          Kindly check other available resources related to your search
-        </button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./css/find.css" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>SMS Edu</title>
+</head>
+
+<body>
+  <nav class="bg-[#00000099] border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/img/sms-logo.png" class="mr-3" alt="SMS Logo" />
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-inherit dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="./index.html"
+              class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500"
+              aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="./about.html"
+              class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500">About
+              Us</a>
+          </li>
+          <li>
+            <a href="#services"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
+              Services</a>
+          </li>
+          <li>
+            <a href="./find.html"
+              class="bold block py-2 pl-3 pr-4 text-white bg-[#EEE159] rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+              Edu</a>
+          </li>
+          <li>
+            <a href="#product"
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+              Product</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <header>
-      <div class="header-text-wrap">
-        <h1>
-          Let Us Help You
-          <span>Lead Your Mates!</span>
-        </h1>
-        <p>Find and download your courses materials for free.</p>
+  </nav>
+  <div class="err-msg hidden">
+    <div class="err-card">
+      <img src="./assets/icons/cancel.svg" data-cancel="" alt="" />
+      <div class="err-img-wrap">
+        <img src="./assets/icons/err-img.svg" alt="" />
       </div>
-      <div class="search-wrap">
-        <label for="search">search</label>
-        <input name="search" type="text" placeholder="Quick Search" />
-        <img src="./assets/icons/Search icon.svg" alt="" />
-      </div>
-    </header>
-    <div class="select-wrap">
-      <h1>Advance search</h1>
+      <h3>Ooops!</h3>
+      <p>The material you are looking for cannot be found!</p>
+      <button data-click="">
+        Kindly check other available resources related to your search
+      </button>
+    </div>
+  </div>
+  <header>
+    <div class="header-text-wrap">
+      <h1 style="color: #EEE159;
+      font-size: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 133.5%;">Let Us Help You
+        Lead Your Mates!</h1>
+      <p style="color: #EEE159;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;">Find and download useful courses materials and past questions, all for free.</p>
+    </div>
+    <div class="search-wrap">
+      <label for="search">search</label>
+      <input name="search" type="text" placeholder="Quick Search" />
+      <img src="./assets/icons/Search icon.svg" alt="" />
+    </div>
+  </header>
+  <div class="select-wrap">
+    <h1>Advance search</h1>
 
-      <div>
-        <p>Institution</p>
-        <select name="institution" aria-placeholder="institution" id="">
-          <option value="xxxx">xxxx</option>
-          <option value="yyyy">yyyy</option>
-          <option value="zzzz">zzzz</option>
-        </select>
-      </div>
-
-      <div>
-        <p>Faculty</p>
-        <select name="Faculty" id="">
-          <option value="xxxx">xxxx</option>
-          <option value="yyyy">yyyy</option>
-          <option value="zzzz">zzzz</option>
-        </select>
-      </div>
-
-      <div>
-        <p>Department</p>
-        <select name="Department" id="">
-          <option value="xxxx">xxxx</option>
-          <option value="yyyy">yyyy</option>
-          <option value="zzzz">zzzz</option>
-        </select>
-      </div>
-
-      <div>
-        <p>Course</p>
-        <select name="Course" id="">
-          <option value="xxxx">xxxx</option>
-          <option value="yyyy">yyyy</option>
-          <option value="zzzz">zzzz</option>
-        </select>
-      </div>
-
-      <button class="submit">Find material</button>
+    <div>
+      <p>Institution</p>
+      <select name="institution" aria-placeholder="institution" id="" disabled>
+        <option value="xxxx">xxxx</option>
+        <option value="yyyy">yyyy</option>
+        <option value="zzzz">zzzz</option>
+      </select>
     </div>
 
-    <footer>
-      <div>
-        <h3>Company</h3>
-        <a href="#">About Us</a>
-        <a href="#">Our Services</a>
-      </div>
+    <div>
+      <p>Faculty</p>
+      <select name="Faculty" id="" disabled>
+        <option value="xxxx">xxxx</option>
+        <option value="yyyy">yyyy</option>
+        <option value="zzzz">zzzz</option>
+      </select>
+    </div>
 
-      <div>
-        <h3>Socials</h3>
-        <a href="https://www.facebook.com/profile.php?id=100086619889189"
-          >Facebook</a
-        >
-        <a href="https://twitter.com/SegamMobileServ">Twitter</a>
-        <a
-          href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ=="
-          >Instagram</a
-        >
-        <a href="https://tiktok.com/@segammobileserv">Tiktok</a>
-        <a
-          href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US"
-          >Snapchat</a
-        >
-        <a href="https://youtube.com/@SegamMobileServices">YouTube</a>
-      </div>
+    <div>
+      <p>Department</p>
+      <select name="Department" id="" disabled>
+        <option value="xxxx">xxxx</option>
+        <option value="yyyy">yyyy</option>
+        <option value="zzzz">zzzz</option>
+      </select>
+    </div>
 
-      <div>
-        <h3>Help</h3>
-        <a href="#">Contact Us</a>
-      </div>
-    </footer>
-    <script src="./find.js"></script>
-  </body>
+    <div>
+      <p>Course</p>
+      <select name="Course" id="" disabled>
+        <option value="xxxx">xxxx</option>
+        <option value="yyyy">yyyy</option>
+        <option value="zzzz">zzzz</option>
+      </select>
+    </div>
+
+    <button class="submit">Find material</button>
+  </div>
+
+  <footer>
+    <div>
+      <h3>Company</h3>
+      <a href="./about.html">About Us</a>
+      <a href="#services">Our Services</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+    <div>
+      <h3>Socials</h3>
+      <a href="https://www.facebook.com/profile.php?id=100086619889189">Facebook</a>
+      <a href="https://twitter.com/SegamMobileServ">Twitter</a>
+      <a href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ==">Instagram</a>
+      <a href="https://tiktok.com/@segammobileserv">Tiktok</a>
+      <a href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US">Snapchat</a>
+      <a href="https://youtube.com/@SegamMobileServices">YouTube</a>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <a href="./about.html#contact">Contact Us</a>
+    </div>
+  </footer>
+  <script src="./find.js"></script>
+  <script src="./assets/js/flowbite.min.js"></script>
+</body>
+
 </html>
