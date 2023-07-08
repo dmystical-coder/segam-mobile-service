@@ -28,33 +28,9 @@ function controlPlay() {
   console.log(audio.currentTime); // this is to check the currentTime in the console log
 
   setInterval(function () {
-    if (audio.currentTime > 30) {
+    if (audio.currentTime > 15) {
       audio.pause();
       audio.currentTime = 0;
     }
   }, 1000);
-
-  window.addEventListener('beforeunload', function () {
-    sessionStorage.setItem('reloadFlag', 'true');
-  });
-
-  window.addEventListener('load', function () {
-    let reloadFlag = sessionStorage.getItem('reloadFlag');
-
-    if (reloadFlag === 'true') {
-      // User has reloaded the page, perform your action here
-      let audio = document.getElementById("myAudio");
-      audio.currentTime = 0;
-      audio.play();
-      console.log(audio.currentTime);
-      setInterval(function () {
-        if (audio.currentTime > 30) {
-          audio.pause();
-          audio.currentTime = 0;
-        }
-      }, 1000);
-      // Reset the flag if needed
-      sessionStorage.removeItem('reloadFlag');
-    }
-  });
 }
