@@ -19,26 +19,14 @@ function showSlides() {
 }
 
 
-document.addEventListener('DOMContentLoaded', controlPlay());
+document.addEventListener('onload', controlPlay());
 
 function controlPlay() {
-  var audio = document.getElementById("myAudio");
+  let audio = document.getElementById("myAudio");
   audio.currentTime = 0;
   audio.play();
   console.log(audio.currentTime); // this is to check the currentTime in the console log
 
-  window.addEventListener('scroll', function () {
-    let audioPosition = audio.getBoundingClientRect().top;
-    let windowHeight = window.innerHeight;
-
-    this.setInterval(function () {
-      if (audioPosition < 0 || audioPosition > windowHeight) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    }, 1000);
-  })
-  // the below setInterval is to check the currentTime is greater than 56 or not in every 1 second
   setInterval(function () {
     if (audio.currentTime > 30) {
       audio.pause();
@@ -46,4 +34,27 @@ function controlPlay() {
     }
   }, 1000);
 
+  window.addEventListener('beforeunload', function () {
+    sessionStorage.setItem('reloadFlag', 'true');
+  });
+
+  window.addEventListener('load', function () {
+    let reloadFlag = sessionStorage.getItem('reloadFlag');
+
+    if (reloadFlag === 'true') {
+      // User has reloaded the page, perform your action here
+      let audio = document.getElementById("myAudio");
+      audio.currentTime = 0;
+      audio.play();
+      console.log(audio.currentTime);
+      setInterval(function () {
+        if (audio.currentTime > 30) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      }, 1000);
+      // Reset the flag if needed
+      sessionStorage.removeItem('reloadFlag');
+    }
+  });
 }
