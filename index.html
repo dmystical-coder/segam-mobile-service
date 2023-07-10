@@ -224,19 +224,19 @@
 						what is trending in SMS!</h2>
 				</div>
 
-				<button data-modal-target="trend-modal" data-modal-toggle="trend-modal"
+				<button data-modal-target="trendModal" data-modal-toggle="trendModal"
 					class="inline-block px-6 py-2 text-sm font-medium text-center text-[#1e1e1e] bg-[#EEE159] rounded-lg hover:bg-[#B7B7B7] focus:ring-4 focus:outline-none focus:ring-[#B7B7B7]  dark:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Check
 					now</button>
 
 				<!-- Main modal -->
-				<div id="trend-modal" tabindex="-1" aria-hidden="true"
+				<div id="trendModal" tabindex="-1" aria-hidden="true"
 					class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
 					<div class="relative w-full max-w-md max-h-full">
 						<!-- Modal content -->
 						<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 							<button type="button"
 								class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-								data-modal-hide="trend-modal">
+								data-modal-hide="trendModal">
 								<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
 									viewBox="0 0 14 14">
 									<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -410,6 +410,72 @@
 												</svg>Trending!</span>
 										</a>
 									</li>
+
+									<li>
+										<!-- Modal toggle -->
+										<a data-modal-hide="trendModal" data-modal-target="couponTermsModal"
+											data-modal-toggle="couponTermsModal" href="javascript:void(0)"
+											class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+											<svg class="w-8 h-8 text-gray-500 dark:text-gray-400"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+												fill="currentColor">
+												<path
+													d="M21 5H3a1 1 0 0 0-1 1v4h.893c.996 0 1.92.681 2.08 1.664A2.001 2.001 0 0 1 3 14H2v4a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-4h-1a2.001 2.001 0 0 1-1.973-2.336c.16-.983 1.084-1.664 2.08-1.664H22V6a1 1 0 0 0-1-1zM11 17H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V7h2v2z">
+												</path>
+											</svg>
+											<span class="flex-1 ml-3 whitespace-nowrap">Coupon Codes</span>
+
+											<span
+												class="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400"><svg
+													class="mr-1 w-3 h-3" viewBox="-33 0 255 255"
+													xmlns="http://www.w3.org/2000/svg"
+													xmlns:xlink="http://www.w3.org/1999/xlink"
+													preserveAspectRatio="xMidYMid" fill="#000000">
+													<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+													<g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+														stroke-linejoin="round"></g>
+													<g id="SVGRepo_iconCarrier">
+														<defs>
+															<style>
+																.cls-3 {
+																	fill: url(#linear-gradient-1);
+																}
+
+																.cls-4 {
+																	fill: #fc9502;
+																}
+
+																.cls-5 {
+																	fill: #fce202;
+																}
+															</style>
+															<linearGradient id="linear-gradient-1"
+																gradientUnits="userSpaceOnUse" x1="94.141" y1="255"
+																x2="94.141" y2="0.188">
+																<stop offset="0" stop-color="#ff4c0d"></stop>
+																<stop offset="1" stop-color="#fc9502"></stop>
+															</linearGradient>
+														</defs>
+														<g id="fire">
+															<path
+																d="M187.899,164.809 C185.803,214.868 144.574,254.812 94.000,254.812 C42.085,254.812 -0.000,211.312 -0.000,160.812 C-0.000,154.062 -0.121,140.572 10.000,117.812 C16.057,104.191 19.856,95.634 22.000,87.812 C23.178,83.513 25.469,76.683 32.000,87.812 C35.851,94.374 36.000,103.812 36.000,103.812 C36.000,103.812 50.328,92.817 60.000,71.812 C74.179,41.019 62.866,22.612 59.000,9.812 C57.662,5.384 56.822,-2.574 66.000,0.812 C75.352,4.263 100.076,21.570 113.000,39.812 C131.445,65.847 138.000,90.812 138.000,90.812 C138.000,90.812 143.906,83.482 146.000,75.812 C148.365,67.151 148.400,58.573 155.999,67.813 C163.226,76.600 173.959,93.113 180.000,108.812 C190.969,137.321 187.899,164.809 187.899,164.809 Z"
+																id="path-1" class="cls-3" fill-rule="evenodd">
+															</path>
+															<path
+																d="M94.000,254.812 C58.101,254.812 29.000,225.711 29.000,189.812 C29.000,168.151 37.729,155.000 55.896,137.166 C67.528,125.747 78.415,111.722 83.042,102.172 C83.953,100.292 86.026,90.495 94.019,101.966 C98.212,107.982 104.785,118.681 109.000,127.812 C116.266,143.555 118.000,158.812 118.000,158.812 C118.000,158.812 125.121,154.616 130.000,143.812 C131.573,140.330 134.753,127.148 143.643,140.328 C150.166,150.000 159.127,167.390 159.000,189.812 C159.000,225.711 129.898,254.812 94.000,254.812 Z"
+																id="path-2" class="cls-4" fill-rule="evenodd">
+															</path>
+															<path
+																d="M95.000,183.812 C104.250,183.812 104.250,200.941 116.000,223.812 C123.824,239.041 112.121,254.812 95.000,254.812 C77.879,254.812 69.000,240.933 69.000,223.812 C69.000,206.692 85.750,183.812 95.000,183.812 Z"
+																id="path-3" class="cls-5" fill-rule="evenodd">
+															</path>
+														</g>
+													</g>
+												</svg>Trending!</span>
+										</a>
+
+									</li>
+
 									<li>
 										<a href="./partnership.html"
 											class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
@@ -507,6 +573,76 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Main modal -->
+	<div id="couponTermsModal" tabindex="-1" aria-hidden="true"
+		class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+		<div class="relative w-full max-w-2xl max-h-full">
+			<!-- Modal content -->
+			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+				<!-- Modal header -->
+				<div class="bg-gray-100 flex items-start justify-between p-4 border-b rounded-tl dark:border-gray-600">
+					<h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+						Terms and Conditions
+					</h3>
+					<button type="button"
+						class="text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+						data-modal-hide="couponTermsModal">
+						<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+							viewBox="0 0 14 14">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+						</svg>
+						<span class="sr-only">Close modal</span>
+					</button>
+				</div>
+				<!-- Modal body -->
+				<div class="p-6 space-y-6">
+					<h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">It
+						is important to Note that:</h2>
+					<ul
+						class="max-w-screen-2xl space-y-1 text-gray-800 list-disc list-inside dark:text-gray-400">
+						<li>
+							Payment is a minimum of &#8358;500, and a maximum of &#8358;2,000.
+						</li>
+						<li>
+							Only ten slots are available.
+						</li>
+						<li>
+							Payment is non refundable.
+						</li>
+						<li>
+							You may share your coupon code with someone else.
+						</li>
+						<li>
+							If you are willing to pay a person's transaction fee without
+							sharing your coupon code with them, you can tell the agent your
+							code directly on the phone. You should also let the agent know
+							how much of your balance you are willing to allot.
+						</li>
+						
+					</ul>
+				</div>
+				<!-- Modal footer -->
+				<div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+					<a href="./coupon.html" data-modal-hide="couponTermsModal"
+													class="inline-flex items-center justify-center my-4 px-3 py-2 text-sm font-medium text-center text-[#1e1e1e] bg-[#EEE159] rounded-lg hover:bg-[#B7B7B7] focus:ring-4 focus:outline-none focus:ring-[#B7B7B7] dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+													I accept
+													<svg class="w-3.5 h-3.5 ml-2" aria-hidden="true"
+														xmlns="http://www.w3.org/2000/svg" fill="none"
+														viewBox="0 0 14 10">
+														<path stroke="currentColor" stroke-linecap="round"
+															stroke-linejoin="round" stroke-width="2"
+															d="M1 5h12m0 0L9 1m4 4L9 9" />
+													</svg>
+												</a>
+					<button data-modal-hide="couponTermsModal" type="button"
+						class="text-gray-800 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
 				</div>
 			</div>
 		</div>

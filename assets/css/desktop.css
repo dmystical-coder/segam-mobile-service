@@ -110,14 +110,6 @@
     line-height: 133.5%;
   }
 
-  main .cta {
-    padding: 2rem 6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-  }
-
   .cta-content {
     display: flex;
     flex-direction: column;
