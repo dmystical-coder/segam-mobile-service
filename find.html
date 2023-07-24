@@ -37,16 +37,38 @@
   }
 
   .search-field {
+    width: 70%;
+    margin: 0 auto;
     margin-top: 1rem;
     display: flex;
-    justify-content: center;
+    gap: 1rem;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 1rem 2rem;
     border-radius: 6.25rem;
     border: 1px solid #FFF;
   }
 
+  .submit {
+    border-radius: 10px;
+    background: #EEE159;
+    box-shadow: 5px 4px 21px -7px #1E1E1E;
+    color: #1E1E1E;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  @media (max-width: 767px) {
+    .search-field {
+      width: 100%;
+    }
+  }
+
   .search-field input {
+    width: 90%;
     background-color: #1E1E1E;
     color: rgba(255, 255, 255, 0.30);
     outline: none;
@@ -141,46 +163,40 @@
       </div>
     </div>
   </header>
-  <div class="select-wrap">
+  <div id="form" class="select-wrap">
     <h2>Advance search</h2>
 
     <div>
       <p>Institution</p>
-      <select name="institution" aria-placeholder="institution" id="" disabled>
-        <option value="xxxx">xxxx</option>
-        <option value="yyyy">yyyy</option>
-        <option value="zzzz">zzzz</option>
+      <select name="institution" aria-placeholder="institution" id="institution">
+        <option disabled selected>Loading Institutions...</option>
       </select>
     </div>
 
     <div>
       <p>Faculty</p>
-      <select name="Faculty" id="" disabled>
-        <option value="xxxx">xxxx</option>
-        <option value="yyyy">yyyy</option>
-        <option value="zzzz">zzzz</option>
+      <select name="Faculty" id="faculty">
+        <option disabled selected>Loading Faculties...</option>
       </select>
     </div>
 
     <div>
       <p>Department</p>
-      <select name="Department" id="" disabled>
-        <option value="xxxx">xxxx</option>
-        <option value="yyyy">yyyy</option>
-        <option value="zzzz">zzzz</option>
+      <select name="Department" id="department">
+        <option disabled selected>Loading Departments...</option>
       </select>
     </div>
 
-    <div>
+    <!-- <div>
       <p>Course</p>
       <select name="Course" id="" disabled>
         <option value="xxxx">xxxx</option>
         <option value="yyyy">yyyy</option>
         <option value="zzzz">zzzz</option>
       </select>
-    </div>
+    </div> -->
 
-    <button class="submit">Find material</button>
+    <button type="submit" class="submit">Find material</button>
   </div>
 
   <footer>
@@ -210,7 +226,128 @@
     </div>
   </footer>
 
-  
+  <script>
+    const PROJECT_ID = "qo9nr7qv";
+    const DATASET = "production";
+    const BASE_URL = `http://localhost:5500`;
+
+    const getUrl = (query) => `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${query}`;
+
+    const formData = {
+      institution: "",
+      faculty: "",
+      department: "",
+    };
+
+    const renderData = async (table) => {
+      try {
+        const query = encodeURIComponent(`
+                          *[_type == "${table}"] {
+                            "label": name,
+                             "value": slug.current
+                            }
+                        `);
+        const res = await fetch(getUrl(query));
+        const data = await res.json();
+
+        const { result } = data;
+
+        if (result.length) {
+          const dropdown = document.getElementById(table);
+          dropdown.addEventListener("change", (e) => {
+            formData[table] = e.target.value;
+          });
+          dropdown.innerHTML = "<option disabled selected>Select...</option>";
+          result.forEach(({ label, value }) => {
+            dropdown.innerHTML += `<option value=${value}>${label}</option>`;
+          });
+        }
+      } catch (err) {
+        console.log({ err });
+      }
+    };
+
+    renderData("institution");
+    renderData("faculty");
+    renderData("department");
+
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!formData.institution || !formData.faculty || !formData.department) {
+        alert("Please select all fields");
+        return;
+      }
+
+      const { institution, faculty, department } = formData;
+
+      const query = encodeURIComponent(`
+          *[_type == "resource" && department->slug.current == "${department}" && faculty->slug.current == "${faculty}" && institution->slug.current == "${institution}"] {
+        _id,
+        _rev,
+        _type,
+        _createdAt,
+        _updatedAt,
+        name,
+        code,
+        title,
+        level->{
+          name
+        },
+        department->{
+          name,
+          slug
+        },
+        faculty->{
+          name
+        },
+        institution->{
+          name
+        },
+        "file": file.asset->url,
+        "image": image.asset->url,
+      }
+                    `);
+      // window.location.href = `${BASE_URL}/?query=${query}`;
+
+      const res = await fetch(getUrl(query));
+      const data = await res.json();
+
+      const { result } = data;
+
+      const resourcesContainer = document.querySelector(".resources-container");
+
+      resourcesContainer.innerHTML = "";
+
+      if (result.length) {
+        console.log({ result });
+        result.forEach(({ name, code, title, level, department, faculty, institution, file, image }) => {
+          resourcesContainer.innerHTML += `
+                <div class="resource">
+                    <img src="${image}" alt="Resource Image" class="resource-image">
+                    <div class="resource-details">
+                        <div class="resource-title">${title}</div>
+                        <div class="resource-info">
+                            <span>Code: ${code}</span>
+                            <span>Level: ${level.name}</span>
+                            <span>Department: ${department.name}</span>
+                            <span>Faculty: ${faculty.name}</span>
+                            <span>Institution: ${institution.name}</span>
+                        </div>
+                        <div class="resource-link">
+                            <a href="${file}" download>Download File</a>
+                        </div>
+                    </div>
+                </div> 
+                `;
+        });
+      } else {
+        resourcesContainer.innerHTML = "<h3>No resources found</h3>";
+      }
+    });
+  </script>
   <script src="./find.js"></script>
   <script src="./assets/js/flowbite.min.js"></script>
 </body>
