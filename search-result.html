@@ -1,15 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search result</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/mobile.css">
+    <link rel="stylesheet" href="./assets/css/desktop.css">
 </head>
+
 <body>
     <div class="page-container">
         <header>
-            
+            <nav class="bg-[#00000099] border-gray-200 dark:bg-gray-900">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <a href="./index.html" class="flex items-center">
+                        <img src="./assets/img/sms-logo.png" class="mr-3" alt="SMS Logo" />
+                    </a>
+                    <button data-collapse-toggle="navbar-default" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                        <ul
+                            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-inherit dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                            <li>
+                                <a href="./index.html"
+                                    class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500"
+                                    aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="./about.html"
+                                    class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500">About
+                                    Us</a>
+                            </li>
+                            <li>
+                                <a href="./index.html#services"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
+                                    Services</a>
+                            </li>
+                            <li>
+                                <a href="./find.html"
+                                    class="bold block py-2 pl-3 pr-4 text-white bg-[#EEE159] rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+                                    Edu</a>
+                            </li>
+                            <li>
+                                <a href="./index.html#product"
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+                                    Product</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
+
+        <main>
+            <h1 class="text-xl md:text-3xl font-medium text-[#1E1E1E]">Search Result: Fis 305 (2)</h1>
+
+            <div class="flex flex-col md:flex-row md:gap-16">
+                <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+                    <div class="content flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <div class="flex gap-4">
+                            <p class="page">30 pages</p>
+                            <p class="type">PDF</p>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <a href="#" class="rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                            <a href="#" class="rounded-lg text-[#1E1E1E] bg-[#EEE159] p-2">Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+                    <div class="content flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <div class="flex gap-4">
+                            <p class="page">30 pages</p>
+                            <p class="type">PDF</p>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <a href="#" class="rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                            <a href="#" class="rounded-lg text-[#1E1E1E] bg-[#EEE159] p-2">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-lg md:text-2xl font-medium my-8">Similar to your search</h2>
+            <div class="container flex flex-wrap justify-center items-center gap-4 md:gap-16">
+                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+
+                    <div class="flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                    </div>
+                </div>
+
+                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+
+                    <div class="flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                    </div>
+                </div>
+                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+
+                    <div class="flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                    </div>
+                </div>
+                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+
+                    <div class="flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                    </div>
+                </div>
+                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+
+                    <div class="flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                    </div>
+                </div>
+                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+
+                    <div class="flex flex-col gap-1">
+                        <h3 class="code font-semibold">FIS 305</h3>
+                        <h4 class="title">Aquaculture</h4>
+                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <a href="#"
+                class="font-medium text-lg text-center px-16 md:px-32 py-3 md:py-4 my-8 rounded-md text-[#1E1E1E] bg-[#EEE159] p-2">Explore
+                more</a>
+        </main>
+
+        <footer>
+            <div>
+                <h3>Company</h3>
+                <a href="./about.html">About Us</a>
+                <a href="./index.html#services">Our Services</a>
+                <a href="./announcement.html">Announcements</a>
+                <a href="./partnership.html">Partnerships</a>
+                <a href="./giveaway.html">Giveaways</a>
+                <a href="./index.html#gallery">Gallery</a>
+            </div>
+            <div>
+                <h3>Socials</h3>
+                <a target="_blank" href="https://www.threads.net/@segammobileservices">Thread</a>
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=100086619889189">Facebook</a>
+                <a target="_blank" href="https://twitter.com/SegamMobileServ">Twitter</a>
+                <a target="_blank"
+                    href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ==">Instagram</a>
+                <a target="_blank" href="https://tiktok.com/@segammobileserv">Tiktok</a>
+                <a target=""
+                    href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US">Snapchat</a>
+                <a target="_blank" href="https://youtube.com/@SegamMobileServices">YouTube</a>
+            </div>
+            <div>
+                <h3>Help</h3>
+                <a href="./about.html#contact">Contact Us</a>
+                <a href="./earn.html">How to Earn in SMS</a>
+            </div>
+        </footer>
     </div>
+
+    <script src="./assets/js/flowbite.min.js"></script>
 </body>
+
 </html>
