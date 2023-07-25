@@ -61,31 +61,3 @@ footer h3 {
 footer a {
   @apply text-xs font-normal text-white md:text-xl;
 }
-
-.err-msg {
-  @apply fixed left-0 top-0 z-10 h-full w-screen flex-col items-center justify-center bg-black/30 backdrop-blur-sm;
-}
-
-.err-card {
-  @apply flex w-80 flex-col items-center justify-center gap-3 rounded-3xl bg-white p-8 text-center;
-}
-
-.err-card > img {
-  @apply relative left-28;
-}
-
-.err-img-wrap {
-  @apply flex h-20 w-20 items-center justify-center rounded-full border-8 border-red-300 bg-red-600;
-}
-
-.err-card h3,
-.err-card p {
-  @apply text-red-600;
-}
-
-.err-card h3 {
-  @apply px-4 text-3xl;
-}
-.err-card button {
-  @apply bg-green-600 p-3 text-base text-white;
-}
