@@ -66,13 +66,21 @@
         </header>
 
         <!-- Main Content -->
-        <main class="pb-10">
+        <main class="pb-10 min-h-screen">
             <div id="search__results">
-                <div class="loader flex justify-center"></div>
                 <h1 id="search__results__title" class="text-xl md:text-3xl font-medium text-[#1E1E1E]"></h1>
 
+                <form class="search-field hidden">
+                    <input type="text" name="search" id="search" placeholder="Quick Search">
+                    <button type="submit">
+                        <img src="./assets/icons/search-icon.svg" alt="">
+                    </button>
+                </form>
+
+                <div class="loader flex justify-center"></div>
+
                 <!-- Results -->
-                <div class="results flex flex-col md:flex-row md:gap-16 flex-wrap">
+                <div class="results grid grid-col-1 md:grid-col-2">
                     <!-- <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
                     <img src="./assets/icons/pdf-icon.svg" alt="">
                     <div class="content flex flex-col gap-1">
@@ -94,52 +102,6 @@
             <!-- Similar Search -->
             <!-- <h2 class="text-lg md:text-2xl font-medium my-8">Similar to your search</h2>
             <div class="container flex flex-wrap justify-center items-center gap-4 md:gap-16">
-                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
-                    <img src="./assets/icons/pdf-icon.svg" alt="">
-
-                    <div class="flex flex-col gap-1">
-                        <h3 class="code font-semibold">FIS 305</h3>
-                        <h4 class="title">Aquaculture</h4>
-                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
-                    </div>
-                </div>
-
-                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
-                    <img src="./assets/icons/pdf-icon.svg" alt="">
-
-                    <div class="flex flex-col gap-1">
-                        <h3 class="code font-semibold">FIS 305</h3>
-                        <h4 class="title">Aquaculture</h4>
-                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
-                    </div>
-                </div>
-                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
-                    <img src="./assets/icons/pdf-icon.svg" alt="">
-
-                    <div class="flex flex-col gap-1">
-                        <h3 class="code font-semibold">FIS 305</h3>
-                        <h4 class="title">Aquaculture</h4>
-                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
-                    </div>
-                </div>
-                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
-                    <img src="./assets/icons/pdf-icon.svg" alt="">
-
-                    <div class="flex flex-col gap-1">
-                        <h3 class="code font-semibold">FIS 305</h3>
-                        <h4 class="title">Aquaculture</h4>
-                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
-                    </div>
-                </div>
-                <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
-                    <img src="./assets/icons/pdf-icon.svg" alt="">
-
-                    <div class="flex flex-col gap-1">
-                        <h3 class="code font-semibold">FIS 305</h3>
-                        <h4 class="title">Aquaculture</h4>
-                        <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
-                    </div>
-                </div>
                 <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
                     <img src="./assets/icons/pdf-icon.svg" alt="">
 
@@ -190,8 +152,11 @@
 
     <script src="./assets/js/flowbite.min.js"></script>
     <script>
+
         window.onload = async () => {
             const loader = document.querySelector(".loader");
+            const searchContainer = document.querySelector(".search-field");
+            const searchInput = document.querySelector(".search-field input");
             loader.innerHTML = `<div class="line-wobble"></div>`
             const urlParams = new URLSearchParams(window.location.search);
             const params = {};
@@ -200,6 +165,7 @@
             }
 
             let results = [];
+            let filteredResults = [];
             try {
                 if (params.q) {
                     const [institution, faculty, department] = params?.q?.split(", ")
@@ -233,31 +199,45 @@
                     `);
                     const res = await fetch(getUrl(query));
                     const data = await res.json()
+
+                    searchContainer.style.display = "block"
                     results = data.result;
+                    filteredResults = results;
                     loader.innerHTML = ``;
-                    console.log(results)
                 }
             } catch (err) {
                 console.log({ err })
                 loader.innerHTML = `<p>An error occurred</p>`
             }
 
-            if (results.length) {
+            renderResults(filteredResults);
+
+            function search(e) {
+                e.preventDefault()
+                filteredResults = results.filter(res => res.title.toLowerCase().includes(searchInput.value.toLowerCase()));
+                renderResults(filteredResults)
+            }
+
+            searchContainer.addEventListener("submit", search)
+
+            function renderResults(_results) {
                 const title = document.getElementById("search__results__title");
-                title.innerText = `Search Result: ${results[0].department.name} (${results.length})`
-
                 const searchResultsContainer = document.querySelector("#search__results .results");
+                if (_results.length) {
+                    title.innerText = `Search Result: ${_results[0].department.name} (${_results.length})`
 
-                results.forEach(resource => {
-                    const file = resource.file;
-                    const ext = file.split(".").splice(-1)[0].toUpperCase()
-                    const title = resource.title;
-                    searchResultsContainer.innerHTML += `
+                    searchResultsContainer.innerHTML = ``;
+
+                    _results.forEach(resource => {
+                        const file = resource.file;
+                        const ext = file.split(".").splice(-1)[0].toUpperCase()
+                        const title = resource.title;
+                        searchResultsContainer.innerHTML += `
                     <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
                     <img src="./assets/icons/pdf-icon.svg" alt="">
                     <div class="content flex flex-col gap-1">
-                        <h3 class="code font-semibold">${resource?.code}</h3>
-                        <h4 class="title">${resource?.department?.name}</h4>
+                        <h3 class="code font-semibold">${resource?.title}</h3>
+                        <h4 class="title">${resource?.code}</h4>
                         <div class="flex gap-4">
                             <p class="type">${ext}</p>
                         </div>
@@ -268,9 +248,13 @@
                     </div>
                 </div>
                     `;
-                });
-            } else {
-                loader.innerHTML = `<p>No result found</p>`
+                    });
+                } else {
+                    title.innerHTML = ``;
+                    searchResultsContainer.innerHTML = ``;
+                    loader.innerHTML = `<p>No result found</p>`
+                }
+
             }
         }
     </script>
