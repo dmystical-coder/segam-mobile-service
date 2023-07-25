@@ -14,7 +14,7 @@
   }
 
   header {
-    @apply mx-auto flex max-w-5xl flex-col items-center justify-center gap-3 rounded-b-3xl bg-[#1e1e1e] pt-4 text-center text-[#eee159];
+    @apply mx-auto flex max-w-5xl flex-col items-center justify-center gap-3 rounded-b-3xl bg-[#1e1e1e] pt-4 text-center text-primary;
   }
   header .header-text-wrap {
     @apply w-80 md:w-full;
@@ -39,7 +39,7 @@ select,
 }
 
 .submit {
-  @apply bg-[#eee159] text-center;
+  @apply bg-primary text-center;
 }
 
 select option[value="xxxx"] {
@@ -55,7 +55,7 @@ footer > div {
 }
 
 footer h3 {
-  @apply text-base text-[#eee159] md:text-3xl;
+  @apply text-base text-primary md:text-3xl;
 }
 
 footer a {

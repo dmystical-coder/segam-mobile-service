@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="./assets/css/mobile.css">
     <link rel="stylesheet" href="./assets/css/desktop.css">
+    <script src="./sanity.js"></script>
 </head>
 
 <body>
     <div class="page-container">
+        <!-- Header -->
         <header>
             <nav class="bg-[#00000099] border-gray-200 dark:bg-gray-900">
                 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -34,27 +36,27 @@
                             class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-inherit dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             <li>
                                 <a href="./index.html"
-                                    class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500"
+                                    class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:text-blue-500"
                                     aria-current="page">Home</a>
                             </li>
                             <li>
                                 <a href="./about.html"
-                                    class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500">About
+                                    class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:text-blue-500">About
                                     Us</a>
                             </li>
                             <li>
                                 <a href="./index.html#services"
-                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
                                     Services</a>
                             </li>
                             <li>
                                 <a href="./find.html"
-                                    class="bold block py-2 pl-3 pr-4 text-white bg-[#EEE159] rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+                                    class="bold block py-2 pl-3 pr-4 text-white bg-primary rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
                                     Edu</a>
                             </li>
                             <li>
                                 <a href="./index.html#product"
-                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+                                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
                                     Product</a>
                             </li>
                         </ul>
@@ -63,11 +65,15 @@
             </nav>
         </header>
 
-        <main>
-            <h1 class="text-xl md:text-3xl font-medium text-[#1E1E1E]">Search Result: Fis 305 (2)</h1>
+        <!-- Main Content -->
+        <main class="pb-10">
+            <div id="search__results">
+                <div class="loader flex justify-center"></div>
+                <h1 id="search__results__title" class="text-xl md:text-3xl font-medium text-[#1E1E1E]"></h1>
 
-            <div class="flex flex-col md:flex-row md:gap-16">
-                <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
+                <!-- Results -->
+                <div class="results flex flex-col md:flex-row md:gap-16 flex-wrap">
+                    <!-- <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
                     <img src="./assets/icons/pdf-icon.svg" alt="">
                     <div class="content flex flex-col gap-1">
                         <h3 class="code font-semibold">FIS 305</h3>
@@ -78,29 +84,15 @@
                         </div>
                         <div class="flex gap-2 mt-2">
                             <a href="#" class="rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
-                            <a href="#" class="rounded-lg text-[#1E1E1E] bg-[#EEE159] p-2">Download</a>
+                            <a href="#" class="rounded-lg text-[#1E1E1E] bg-primary p-2">Download</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
-                    <img src="./assets/icons/pdf-icon.svg" alt="">
-                    <div class="content flex flex-col gap-1">
-                        <h3 class="code font-semibold">FIS 305</h3>
-                        <h4 class="title">Aquaculture</h4>
-                        <div class="flex gap-4">
-                            <p class="page">30 pages</p>
-                            <p class="type">PDF</p>
-                        </div>
-                        <div class="flex gap-2 mt-2">
-                            <a href="#" class="rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
-                            <a href="#" class="rounded-lg text-[#1E1E1E] bg-[#EEE159] p-2">Download</a>
-                        </div>
-                    </div>
+                </div> -->
                 </div>
             </div>
 
-            <h2 class="text-lg md:text-2xl font-medium my-8">Similar to your search</h2>
+            <!-- Similar Search -->
+            <!-- <h2 class="text-lg md:text-2xl font-medium my-8">Similar to your search</h2>
             <div class="container flex flex-wrap justify-center items-center gap-4 md:gap-16">
                 <div class="resource-container-ii flex flex-col md:flex-row md:gap-6 gap-1">
                     <img src="./assets/icons/pdf-icon.svg" alt="">
@@ -157,45 +149,131 @@
                         <a href="#" class="text-center rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
                     </div>
                 </div>
-                
-            </div>
 
-            <a href="#"
-                class="font-medium text-lg text-center px-16 md:px-32 py-3 md:py-4 my-8 rounded-md text-[#1E1E1E] bg-[#EEE159] p-2">Explore
-                more</a>
-        </main>
+                 -->
+    </div>
 
-        <footer>
-            <div>
-                <h3>Company</h3>
-                <a href="./about.html">About Us</a>
-                <a href="./index.html#services">Our Services</a>
-                <a href="./announcement.html">Announcements</a>
-                <a href="./partnership.html">Partnerships</a>
-                <a href="./giveaway.html">Giveaways</a>
-                <a href="./index.html#gallery">Gallery</a>
-            </div>
-            <div>
-                <h3>Socials</h3>
-                <a target="_blank" href="https://www.threads.net/@segammobileservices">Thread</a>
-                <a target="_blank" href="https://www.facebook.com/profile.php?id=100086619889189">Facebook</a>
-                <a target="_blank" href="https://twitter.com/SegamMobileServ">Twitter</a>
-                <a target="_blank"
-                    href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ==">Instagram</a>
-                <a target="_blank" href="https://tiktok.com/@segammobileserv">Tiktok</a>
-                <a target=""
-                    href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US">Snapchat</a>
-                <a target="_blank" href="https://youtube.com/@SegamMobileServices">YouTube</a>
-            </div>
-            <div>
-                <h3>Help</h3>
-                <a href="./about.html#contact">Contact Us</a>
-                <a href="./earn.html">How to Earn in SMS</a>
-            </div>
-        </footer>
+    <!-- <a href="#"
+        class="font-medium text-lg text-center px-16 md:px-32 py-3 md:py-4 my-8 rounded-md text-[#1E1E1E] bg-primary p-2">Explore
+        more</a> -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <h3>Company</h3>
+            <a href="./about.html">About Us</a>
+            <a href="./index.html#services">Our Services</a>
+            <a href="./announcement.html">Announcements</a>
+            <a href="./partnership.html">Partnerships</a>
+            <a href="./giveaway.html">Giveaways</a>
+            <a href="./index.html#gallery">Gallery</a>
+        </div>
+        <div>
+            <h3>Socials</h3>
+            <a target="_blank" href="https://www.threads.net/@segammobileservices">Thread</a>
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100086619889189">Facebook</a>
+            <a target="_blank" href="https://twitter.com/SegamMobileServ">Twitter</a>
+            <a target="_blank" href="https://instagram.com/segammobileservices?igshid=ZGUzMzM3NWJiOQ==">Instagram</a>
+            <a target="_blank" href="https://tiktok.com/@segammobileserv">Tiktok</a>
+            <a target=""
+                href="https://www.snapchat.com/add/segammobileserv?share_id=eBlQpwTzJlA&locale=en-US">Snapchat</a>
+            <a target="_blank" href="https://youtube.com/@SegamMobileServices">YouTube</a>
+        </div>
+        <div>
+            <h3>Help</h3>
+            <a href="./about.html#contact">Contact Us</a>
+            <a href="./earn.html">How to Earn in SMS</a>
+        </div>
+    </footer>
     </div>
 
     <script src="./assets/js/flowbite.min.js"></script>
+    <script>
+        window.onload = async () => {
+            const loader = document.querySelector(".loader");
+            loader.innerHTML = `<div class="line-wobble"></div>`
+            const urlParams = new URLSearchParams(window.location.search);
+            const params = {};
+            for (const [key, value] of urlParams.entries()) {
+                params[key] = value;
+            }
+
+            let results = [];
+            try {
+                if (params.q) {
+                    const [institution, faculty, department] = params?.q?.split(", ")
+
+                    const query = encodeURIComponent(`
+          *[_type == "resource" && department->slug.current == "${department}" && faculty->slug.current == "${faculty}" && institution->slug.current == "${institution}"] {
+        _id,
+        _rev,
+        _type,
+        _createdAt,
+        _updatedAt,
+        name,
+        code,
+        title,
+        level->{
+          name
+        },
+        department->{
+          name,
+          slug
+        },
+        faculty->{
+          name
+        },
+        institution->{
+          name
+        },
+        "file": file.asset->url,
+        "image": image.asset->url,
+      }
+                    `);
+                    const res = await fetch(getUrl(query));
+                    const data = await res.json()
+                    results = data.result;
+                    loader.innerHTML = ``;
+                    console.log(results)
+                }
+            } catch (err) {
+                console.log({ err })
+                loader.innerHTML = `<p>An error occurred</p>`
+            }
+
+            if (results.length) {
+                const title = document.getElementById("search__results__title");
+                title.innerText = `Search Result: ${results[0].department.name} (${results.length})`
+
+                const searchResultsContainer = document.querySelector("#search__results .results");
+
+                results.forEach(resource => {
+                    const file = resource.file;
+                    const ext = file.split(".").splice(-1)[0].toUpperCase()
+                    const title = resource.title;
+                    searchResultsContainer.innerHTML += `
+                    <div class="resource-container flex gap-8 mt-8 bg-[#F5F5F5] p-4 md:p-8 rounded-xl">
+                    <img src="./assets/icons/pdf-icon.svg" alt="">
+                    <div class="content flex flex-col gap-1">
+                        <h3 class="code font-semibold">${resource?.code}</h3>
+                        <h4 class="title">${resource?.department?.name}</h4>
+                        <div class="flex gap-4">
+                            <p class="type">${ext}</p>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <a href="#" class="rounded-lg text-white bg-[#1E1E1E] p-2">Preview</a>
+                            <a href=${file} download=${title} target="_blank" class="rounded-lg text-[#1E1E1E] bg-primary p-2">Download</a>
+                        </div>
+                    </div>
+                </div>
+                    `;
+                });
+            } else {
+                loader.innerHTML = `<p>No result found</p>`
+            }
+        }
+    </script>
 </body>
 
 </html>

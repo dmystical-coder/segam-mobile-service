@@ -2703,9 +2703,9 @@ input:checked + .toggle-bg {
   background-color: rgb(30 30 30 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#EEE159\] {
+.bg-\[\#F5F5F5\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(238 225 89 / var(--tw-bg-opacity));
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
@@ -2763,6 +2763,11 @@ input:checked + .toggle-bg {
   background-color: rgb(104 117 245 / var(--tw-bg-opacity));
 }
 
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 225 89 / var(--tw-bg-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -2774,15 +2779,6 @@ input:checked + .toggle-bg {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-\[\] {
-  background-color: ;
-}
-
-.bg-\[\#F5F5F5\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -2937,10 +2933,6 @@ input:checked + .toggle-bg {
   padding: 1.5rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -2954,11 +2946,6 @@ input:checked + .toggle-bg {
 .px-2\.5 {
   padding-left: 0.625rem;
   padding-right: 0.625rem;
-}
-
-.px-24 {
-  padding-left: 6rem;
-  padding-right: 6rem;
 }
 
 .px-3 {
@@ -3044,6 +3031,10 @@ input:checked + .toggle-bg {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .text-left {
@@ -3251,11 +3242,6 @@ input:checked + .toggle-bg {
   color: rgb(51 102 153 / .35);
 }
 
-.text-\[\#EEE159\] {
-  --tw-text-opacity: 1;
-  color: rgb(238 225 89 / var(--tw-text-opacity));
-}
-
 .text-\[\#fc9502\] {
   --tw-text-opacity: 1;
   color: rgb(252 149 2 / var(--tw-text-opacity));
@@ -3309,6 +3295,11 @@ input:checked + .toggle-bg {
 .text-green-800 {
   --tw-text-opacity: 1;
   color: rgb(3 84 63 / var(--tw-text-opacity));
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(238 225 89 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -3674,8 +3665,56 @@ input:checked + .toggle-bg {
 
 /* npx tailwind -i ./input/input.css -o ./css/style.css --watch */
 
-html{
-  font-family: 'Poppins', sans-serif;
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+.line-wobble {
+  --uib-size: 80px;
+  --uib-speed: 1.75s;
+  --uib-color: black;
+  --uib-line-weight: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-line-weight);
+  width: var(--uib-size);
+  border-radius: calc(var(--uib-line-weight) / 2);
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.line-wobble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--uib-color);
+  opacity: 0.1;
+}
+
+.line-wobble::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: calc(var(--uib-line-weight) / 2);
+  animation: wobble var(--uib-speed) ease-in-out infinite;
+  transform: translateX(-95%);
+  background-color: var(--uib-color);
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(-95%);
+  }
+
+  50% {
+    transform: translateX(95%);
+  }
 }
 
 @media (min-width: 640px) {
@@ -3828,11 +3867,6 @@ html{
   --tw-ring-color: rgb(183 183 183 / var(--tw-ring-opacity));
 }
 
-.focus\:ring-\[\#EEE159\]:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(238 225 89 / var(--tw-ring-opacity));
-}
-
 .focus\:ring-blue-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
@@ -3841,6 +3875,11 @@ html{
 .focus\:ring-gray-200:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(238 225 89 / var(--tw-ring-opacity));
 }
 
 .focus\:hover\:text-center:hover:focus {
@@ -4176,10 +4215,6 @@ html{
     gap: 2rem;
   }
 
-  .md\:gap-4 {
-    gap: 1rem;
-  }
-
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -4217,19 +4252,14 @@ html{
     padding-right: 0px;
   }
 
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .md\:px-32 {
     padding-left: 8rem;
     padding-right: 8rem;
   }
 
-  .md\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:py-4 {
@@ -4266,7 +4296,7 @@ html{
     line-height: 1.75rem;
   }
 
-  .md\:text-\[\#EEE159\] {
+  .md\:text-primary {
     --tw-text-opacity: 1;
     color: rgb(238 225 89 / var(--tw-text-opacity));
   }
@@ -4280,7 +4310,7 @@ html{
     background-color: transparent;
   }
 
-  .md\:hover\:text-\[\#EEE159\]:hover {
+  .md\:hover\:text-primary:hover {
     --tw-text-opacity: 1;
     color: rgb(238 225 89 / var(--tw-text-opacity));
   }

@@ -18,88 +18,89 @@
   <link rel="stylesheet" href="./css/find.css" />
   <link rel="stylesheet" href="./css/style.css">
   <title>SMS Edu</title>
-</head>
 
-<style>
-  .hero {
-    border-radius: 0rem 0rem 1.875rem 1.875rem;
-    background: #1E1E1E;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .hero h1 {
-    color: #EEE159;
-    font-size: 1.5rem;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 133.5%;
-  }
-
-  .hero p {
-    color: #EEE159;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .search-field {
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-radius: 6.25rem;
-    border: 1px solid #FFF;
-  }
-
-  .submit {
-    border-radius: 10px;
-    background: #EEE159;
-    box-shadow: 5px 4px 21px -7px #1E1E1E;
-    color: #1E1E1E;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-  }
-
-  @media (max-width: 767px) {
-    .search-field {
-      width: 100%;
+  <style>
+    .hero {
+      border-radius: 0rem 0rem 1.875rem 1.875rem;
+      background: #1E1E1E;
+      padding: 2rem;
+      text-align: center;
     }
-  }
 
-  .search-field input {
-    width: 90%;
-    background-color: #1E1E1E;
-    color: rgba(255, 255, 255, 0.30);
-    outline: none;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+    .hero h1 {
+      color: #EEE159;
+      font-size: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 133.5%;
+    }
 
-  .select-wrap h2 {
-    color: #1E1E1E;
-    font-size: 1.5rem;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
-</style>
+    .hero p {
+      color: #EEE159;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .search-field {
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-radius: 6.25rem;
+      border: 1px solid #FFF;
+    }
+
+    .submit {
+      border-radius: 10px;
+      background: #EEE159;
+      box-shadow: 5px 4px 21px -7px #1E1E1E;
+      color: #1E1E1E;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    @media (max-width: 767px) {
+      .search-field {
+        width: 100%;
+      }
+    }
+
+    .search-field input {
+      width: 90%;
+      background-color: #1E1E1E;
+      color: rgba(255, 255, 255, 0.30);
+      outline: none;
+      border: none;
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .select-wrap h2 {
+      color: #1E1E1E;
+      font-size: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  </style>
+  <script src="./sanity.js"></script>
+</head>
 
 <body>
   <nav class="bg-[#00000099] border-gray-200 dark:bg-gray-900">
@@ -121,27 +122,27 @@
           class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-inherit dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <a href="./index.html"
-              class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500"
+              class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:text-blue-500"
               aria-current="page">Home</a>
           </li>
           <li>
             <a href="./about.html"
-              class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:text-blue-500">About
+              class="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:text-blue-500">About
               Us</a>
           </li>
           <li>
             <a href="./index.html#services"
-              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Our
               Services</a>
           </li>
           <li>
             <a href="./find.html"
-              class="bold block py-2 pl-3 pr-4 text-white bg-[#EEE159] rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+              class="bold block py-2 pl-3 pr-4 text-white bg-primary rounded hover:bg-gray-100 md:hover:bg-transparent md:bg-transparent md:border-0 md:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
               Edu</a>
           </li>
           <li>
             <a href="./index.html#product"
-              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-[#EEE159] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
+              class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-white md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">SMS
               Product</a>
           </li>
         </ul>
@@ -174,7 +175,7 @@
       </div>
     </div>
   </header>
-  <div id="form" class="select-wrap">
+  <form id="form" class="select-wrap">
     <h2>Advance search</h2>
 
     <div>
@@ -208,7 +209,7 @@
     </div> -->
 
     <button type="submit" class="submit">Find material</button>
-  </div>
+  </form>
 
   <footer>
     <div>
@@ -243,12 +244,6 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <script>
-    const PROJECT_ID = "qo9nr7qv";
-    const DATASET = "production";
-    const BASE_URL = `http://localhost:5500`;
-
-    const getUrl = (query) => `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${query}`;
-
     const formData = {
       institution: "",
       faculty: "",
@@ -297,74 +292,16 @@
         return;
       }
 
-      const { institution, faculty, department } = formData;
+      const institution = document.getElementById("institution")?.value;
+      const faculty = document.getElementById("faculty")?.value;
+      const department = document.getElementById("department")?.value;
 
-      const query = encodeURIComponent(`
-          *[_type == "resource" && department->slug.current == "${department}" && faculty->slug.current == "${faculty}" && institution->slug.current == "${institution}"] {
-        _id,
-        _rev,
-        _type,
-        _createdAt,
-        _updatedAt,
-        name,
-        code,
-        title,
-        level->{
-          name
-        },
-        department->{
-          name,
-          slug
-        },
-        faculty->{
-          name
-        },
-        institution->{
-          name
-        },
-        "file": file.asset->url,
-        "image": image.asset->url,
-      }
-                    `);
-      // window.location.href = `${BASE_URL}/?query=${query}`;
+      const q = encodeURIComponent(`${institution}, ${faculty}, ${department}`);
 
-      const res = await fetch(getUrl(query));
-      const data = await res.json();
-
-      const { result } = data;
-
-      const resourcesContainer = document.querySelector(".resources-container");
-
-      resourcesContainer.innerHTML = "";
-
-      if (result.length) {
-        console.log({ result });
-        result.forEach(({ name, code, title, level, department, faculty, institution, file, image }) => {
-          resourcesContainer.innerHTML += `
-                <div class="resource">
-                    <img src="${image}" alt="Resource Image" class="resource-image">
-                    <div class="resource-details">
-                        <div class="resource-title">${title}</div>
-                        <div class="resource-info">
-                            <span>Code: ${code}</span>
-                            <span>Level: ${level.name}</span>
-                            <span>Department: ${department.name}</span>
-                            <span>Faculty: ${faculty.name}</span>
-                            <span>Institution: ${institution.name}</span>
-                        </div>
-                        <div class="resource-link">
-                            <a href="${file}" download>Download File</a>
-                        </div>
-                    </div>
-                </div> 
-                `;
-        });
-      } else {
-        resourcesContainer.innerHTML = "<h3>No resources found</h3>";
-      }
+      window.location.href = `/search-result.html?q=${q}`
     });
   </script>
-  <script src="./find.js"></script>
+  <!-- <script src="./find.js"></script> -->
   <script src="./assets/js/flowbite.min.js"></script>
 </body>
 
